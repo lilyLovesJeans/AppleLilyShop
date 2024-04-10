@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-size;
+  }
+  body{
+    color: #606266;
+    font-size: 14px;
+    background: #f6f6f6;
+  }
+  
+  .product-detail-panel{
+    margin: 15px;
+    overflow: hidden;
+    padding: 24px 24px 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,.12);
+    border-radius: 6px;
+  }
+  
+  h2{
+    padding-bottom: 12px;
+    border-bottom: 1px solid #dddddd;
+  }
+  .input-text{
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    border-color: #dddddd;
+   
+    }
+    
+   .input-text-height{
+     height: 30px;
+   }
+  .edit-row {
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+  }
+  
+  .edit-label {
+    justify-content: flex-end;
+    min-height: 40px;
+    text-align: right;
+    color: #333;
+  }
+  
+  .edit-title {
+    flex-basis: 144px;
+    margin-right: 16px;
+    max-width: 144px;
+  
+  }
+  
+  .mandatory {
+      display: inline-block;
+      font-size: 14px;
+  }
+  
+  .madatory-icon{
+   margin-right: 3px;
+   font-size: 8px;
+   vertical-align: middle;
+   color: #ee4d2d;
+    
+  }
+  
+  .edit-main{
+    flex: 1;
+    max-width: calc(100% - 144px - 16px);
+  }
+  
+  .submit-button {
+    margin: 15px;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #FF4500;
+    display: flex;
+    justify-content: center;
+    margin-left: auto; /* 将按钮置于右侧 */
+  }

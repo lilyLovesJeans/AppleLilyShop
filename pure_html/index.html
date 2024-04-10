@@ -1,0 +1,225 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="./style.css">
+  <title>上架商品</title>
+</head>
+<body>
+
+  <form target="_blank" method="post">
+  <div class="product-detail">
+      <div class="product-detail-panel">
+      <h2>
+    基本資訊
+    </h2>
+      <!--商品圖片-->
+      <div class="edit-row">
+         <div class="edit-label edit-title">
+          <div class="madatory">
+           <span class="madatory-icon">*
+           </span>
+           <span>
+           商品圖片：
+           </span>
+          </div>
+        </div>
+
+        <div class="edit-main">
+           <input 
+           id="item_img"
+           type="file" 
+           name="item_img" 
+           accept="image/png, image/jpeg"  
+           multiple
+           required/>
+           <br><br>
+        </div>   
+      </div>
+      <!--商品名稱-->
+      <div class="edit-row">
+        <div class="edit-label edit-title">
+            <div class="madatory">
+              <span class="madatory-icon">*
+              </span>
+              <span>
+                商品名稱：
+              </span>
+
+           </div>
+           </div>
+        <div class="edit-main">
+           <input class="input-text input-text-height"
+           placeholder="請輸入..."
+           size="large"
+           id="item_name"
+           type="text"
+           name="item_name"
+           value=""
+           min="4" max="20"
+           required/> 輸入 4～20字
+           <br><br>
+
+        </div>
+      </div>
+
+      <!--性別-->
+      <div class="edit-row">
+        <div class="edit-label edit-title">
+            <div class="madatory">
+              <span class="madatory-icon">*
+              </span>
+              <span>
+                性別：
+              </span>
+
+           </div>
+           </div>
+        <div class="edit-main">
+           <input
+           id="gender_1"
+           type="radio" 
+           name="gender"
+           value="男"
+           required/>男
+           <input
+           id="gender_2"
+           type="radio" 
+           name="gender"
+           value="女"
+           required/>女
+           <br><br>
+
+        </div>
+      </div> 
+      <!--類別-->
+      <div class="edit-row">
+        <div class="edit-label edit-title">
+            <div class="madatory">
+              <span class="madatory-icon">*
+              </span>
+              <span>
+                類別：
+              </span>
+
+           </div>
+           </div>
+        <div class="edit-main">
+           <select name="category">
+              <option value="上身類" selected/>上身類
+              <option value="外套類"/>外套類
+              <option value="下身類"/>下身類
+              <option value="配件類"/>配件類
+           </select>
+           <br><br>
+
+        </div>
+      </div>
+      <!--商品備註-->     
+      <div class="edit-row">
+        <div class="edit-label edit-title">
+            <div class="madatory">
+              <span>
+                商品備註：
+              </span>
+
+           </div>
+           </div>
+        <div class="edit-main">
+           <textarea  class="input-text"
+             name = "description"
+             rows = "5" 
+             cols = "50" 
+            > 
+           </textarea>
+           <br><br>
+
+        </div>
+      </div>  
+    </div>
+    <div class="product-detail-panel">
+      <h2>
+    銷售資訊
+    </h2>
+        <!--價格-->    
+      <div class="edit-row">
+        <div class="edit-label edit-title">
+            <div class="madatory">
+              <span class="madatory-icon">*
+              </span>
+              <span>
+                價格：
+              </span>
+
+           </div>
+           </div>
+        <div class="edit-main">
+           <input class="input-text input-text-height"
+           id="item_price"
+           type="text"
+           name="item_price"
+           required/>
+           <br><br>
+
+        </div>
+      </div>  
+      <!--數量-->
+      <div class="edit-row">
+        <div class="edit-label edit-title">
+            <div class="madatory">
+              <span class="madatory-icon">*
+              </span>
+              <span>
+                數量：
+              </span>
+
+           </div>
+           </div>
+        <div class="edit-main">
+           <input  class="input-text input-text-height"
+             type="number"
+             name="qty"
+             min="0"
+             max="999"
+             step="1"
+             value="2"/>
+            <br><br>
+
+        </div>
+      </div> 
+      <!--是否免運-->
+      <div class="edit-row">
+        <div class="edit-label edit-title">
+            <div class="madatory">
+              <span class="madatory-icon">*
+              </span>
+              <span>
+                是否免運：
+              </span>
+
+           </div>
+           </div>
+        <div class="edit-main">
+           <input
+           id="deliveryfee_include"
+           type="checkbox" 
+           name="deliveryfee_include"
+           value="on"
+           />
+           <br><br>
+
+        </div>
+      </div>
+    </div>
+
+
+    
+    <input class="submit-button"
+      type="submit"
+      name="submit"
+      value="儲存並上架"/>
+  </div>
+
+   
+  </form>
+</body>
+</html>
