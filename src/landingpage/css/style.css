@@ -3,7 +3,7 @@
   }
   body{
     color: #606266;
-    font-size: 14px;
+    font-size: 18px;
     background: #f6f6f6;
   }
   
@@ -28,7 +28,7 @@
     }
     
    .input-text-height{
-     height: 30px;
+     height: 35px;
    }
   .edit-row {
     padding-top: 10px;
@@ -70,6 +70,7 @@
   }
   
   .submit-button {
+    font-size:15px;
     margin: 15px;
     width: 100px;
     height: 35px;

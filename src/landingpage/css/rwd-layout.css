@@ -1,0 +1,64 @@
+.headline{
+    font-size:30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.desktop-menu{
+    text-align: center;
+    display: block;
+}
+.mobile-menu{
+    text-align: center;
+    display: none;
+}
+.list{
+    display:flex;
+    justify-content: center;
+}
+
+/*桌機螢幕 最低 1200px  , 
+  用1200px/4 抓取每一個大約
+  300px, 設定 280px ,
+  再加上 margin 左右各 10px ,
+  這樣大約300px@product,
+  我選擇用 275px , 因為筆電會再小一點點 */
+.product{
+    flex:none;width:260px;margin: 10px;
+    background-color:#ffcccc;
+}
+
+/*如果螢幕小於 1250px 平版，套用這個區塊的 CSS，
+所以要思考如何排列，
+要設定 flex-wrap: wrap;
+寬度配製要想清楚，
+寬度 width : 45% , 
+二個寬度就是 45%＊2 ＝90%，
+這樣就會變成放二個，
+不夠放的 就會往下掉，
+下列設計是平版的
+*/
+@media(max-width:1185px){
+    .list{
+        flex-wrap: wrap;
+    }
+    .product{
+        width: 45%;
+    }
+}
+
+/*手機單一排版 , 手機最小 360px*/
+@media(max-width: 500px){
+    .headline{
+        font-size: 20px;
+    }
+    .desktop-menu{
+        display: none;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    .product{
+        width:90%;
+    }
+}
