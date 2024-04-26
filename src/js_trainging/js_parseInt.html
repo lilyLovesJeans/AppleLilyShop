@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上下單</title>
+    <link rel="stylesheet" href="./js_parseInt.css">
+</head>
+<body>
+    <div class="bk_img_container">
+        <div class="bk_img">
+            <img src="https://imgur.com/Y4gjfmp.jpg">
+        </div>
+
+    </div>
+    <div class="orderPage">
+        <div class="order_input_container">
+
+            <div class="list_items">
+                <span class="inline">
+                     您好，尊姓大名？
+                    <input class="input input_cust list_itms" id="customer_name" type="text"  autofocus /> 
+                </span>
+                <span class="inline">
+              
+                    服裝的分類： 
+                    <select id="list_item_1">
+                        <option value="men">男裝</option>
+                        <option value="women">女裝</option>
+                    </select>
+                 </span>
+                 <span class="inline">
+                    服裝的類型：
+                    <select id="list_itme_2">
+                        <option value="coats">外套</option>
+                        <option value="top">上衣</option>
+                        <option value="bottom">下身</option>
+                    </select>
+                </span>
+                <span class="inline">
+                    訂購數量：
+                   <input class="input list_itms" id="order_qty" type="text"/> 
+                   <span style="color: white;
+                    background-color:  #653705  ;
+                    padding: 5px 10px;">
+                   ( 男裝：600元/件 ，女裝：500元/件 )</span>
+               </span>
+            </div>
+                
+            <div class="btn_container">
+                <button class="btn btn_1" onclick="goOrder()">我要訂購</button>
+                <button class="btn btn_2" onclick="aboutMe()">認識工廠</button>
+            </div>
+
+        </div>
+
+    
+        <div class="order_container">
+            <div class="order_list">
+                <p>您的訂單</p>
+                <br class="br_2">
+                <p >顧客姓名： <span id="order_list_customer_name"></span>
+                </p>
+                <p >服裝分類： <span id="order_list_item_1"></span>
+                </p>
+                <p >服裝類型： <span id="order_list_item_2"></span>
+                </p>
+                <p >訂購數量： <span id="list_order_qty"></span> 件
+                </p>
+                <p >初步估價： <span id="list_order_amt"></span> 元
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js_parseInt.js"></script>
+</body>
+</html>
