@@ -70,7 +70,6 @@ body{
  }
 
  select {
-    appearance: none;
     background: rgb(101, 55, 5, 70%);
     color: #fafafa;
     width: 100px;
@@ -118,6 +117,7 @@ select:focus {
     
   }
 .order_container{
+    display: none;
     position: absolute;
     top: 250px;
     left: 0px;

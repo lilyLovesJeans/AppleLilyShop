@@ -1,0 +1,139 @@
+body{
+    color: #333;
+    background-color: #eedada;
+    font-family: OpenSansRegular, "微軟正黑體修正", "微軟正黑體", "Microsoft JhengHei", MHei, STHeitiTC-Light, sans-serif, Arial, Helvetica, "Helvetica Neue", Tahoma, Verdana;
+
+}
+
+
+
+.bk_img_container {
+    position: relative;
+    overflow:scroll;
+    width: 100%;
+    height: 85vh; /* 占满整个视口高度 */
+}
+
+.bk_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 铺满且不变形 */
+    z-index: -1;
+}
+
+.orderPage{
+    position: absolute;
+    top: 20px;
+    left:20px; 
+    background-color:  rgba(238, 218, 218 , 50%) ;
+    padding-left: 20px; 
+    font-size:  1.2rem;
+    color:  #653705;
+}
+.order_list_container{
+    position: relative;
+    width: 799px;
+    height: 225px;
+
+}
+
+.list_items {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+.inline {
+    display: inline;
+    padding-top: 12px;
+}
+
+.input_cust{
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid #653705 ;
+    background-color: white;
+   
+}
+.input_cust:focus { 
+    outline: none !important;
+    border-color: #653705;
+    box-shadow: 0 0 10px #653705;
+ }
+
+ select {
+    background: rgb(101, 55, 5, 70%);
+    color: #fafafa;
+    width: 100px;
+    height: 3em;
+    padding: 8px;
+    position: relative;
+    border-radius: 2px;
+ }
+select:focus {
+        border: none; /* Remove the border for the select element when it is focused */
+      }
+
+
+ .btn_container{
+    position: relative;
+    left: 400px;
+   
+ }
+.btn {
+    margin-right: 20px;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 50px;
+    background-color: #ffeae4;
+    color: #653705;
+    border:0px;
+    cursor: pointer;
+}
+
+
+.btn_2{
+    color: white;
+    background-color: #653705;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
+.br_2 {
+    display: block;
+    content: "";
+    border-bottom: 1px solid #653705;
+    
+  }
+.order_container{
+    display: none;
+    position: absolute;
+    top: 250px;
+    left: 0px;
+    width: 540px;
+    height: 260px;
+    background-color:  rgba(238, 218, 218 , 50%) ;
+    padding-left: 20px; 
+    color:  #653705;
+}
+
+.order_list{
+    position: relative;
+    margin-top: 20px;
+    padding: 10px;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid  #653705;
+}

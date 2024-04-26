@@ -10,6 +10,10 @@ function goOrder(){
         const myMsg = '謝謝您對我們的衣服有興趣！請致電 0987-654-321，會有專人提供您報價！';
         const msg = custName + ', '+ myMsg;
         alert(msg);
+
+        /* show 出訂單訊息 */
+        document.querySelector('.order_container').style.display = 'block';
+        
         document.getElementById('order_list_customer_name').textContent=custName;
 
         let menu_1 = document.getElementById('list_item_1');
