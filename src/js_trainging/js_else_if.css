@@ -9,7 +9,8 @@ body{
 
 .bk_img_container {
     position: relative;
-    overflow:scroll;
+    overflow-y: scroll; /* 只有垂直滾動條 */
+    overflow-x: hidden; /* 隱藏水平滾動條 */
     width: 100%;
     height: 98vh; /* 占满整个视口高度 */
 }
@@ -35,7 +36,7 @@ body{
 }
 .order_input_container{
     position: relative;
-    width: 799px;
+    width: 100%;
     height: 290px;
 
 }
@@ -56,7 +57,6 @@ body{
 
 .input{
     margin-top: 6px;
-    margin-right: 20px;
     width: 150px;
     height: 30px;
     border: 1px solid #653705 ;
@@ -80,27 +80,37 @@ body{
     border-radius: 2px;
  }
 select:focus {
-        border: none; 
-        font-size: 20px;
-      }
-select::after {
-        font-size: 15px;
-      }
+    border: none; 
+    font-size: 20px;
+}
 
- .btn_container{
-    position: relative;
-    top: 20px;
-    left: 400px;
-   
- }
+select::after {
+    font-size: 15px;
+}
+
+.price_bookmark {
+    font-size: smaller;
+    display: inline;
+    margin:0;
+    margin-right: 10px;
+    color: white;
+    background-color:  #653705  ;
+    padding: 5px 10px;
+}
+
+.btn_container{
+    margin-top: 20px;
+    margin-left: 220px;
+}
 .btn {
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 1.2rem;
     width: 150px;
     height: 50px;
     background-color: #ffeae4;
     color: #653705;
     border:0px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
