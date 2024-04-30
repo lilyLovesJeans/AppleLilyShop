@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-container {
+    width: 600px;
+    min-height: 100px;
+    margin: auto;
+    background-image: url('./background-1.jpg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    overflow: hidden;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    position: relative; /* 將 bg-container 設置為相對定位 */
+}
+
+.input_text {
+    position: relative; /* 將 input_text 設置為相對定位 */
+    top: 20px;
+    color: #82715f;
+    margin-left: 20px;
+}
+
+.to_do_list {
+    position: relative; /* 將 to_do_list 設置為相對定位 */
+    top: 50px;
+    margin-left: 20px;
+    border: none;
+    background-color: #f2eee2;
+    border-radius: 10px;
+    width: 560px;
+    min-height: 500px;
+}
