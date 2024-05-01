@@ -6,10 +6,10 @@ body{
     color: #82715f;
 }
  .bg-container{
-    background-image: url('https://imgur.com/0GIPhB0.jpg');
-    width: 640px;
+    background-image: url('./background-3.jpg');
+    width: 600px;
     min-height: 100px;
-    border-radius: 8px;
+    border-radius: 10px;
     margin:auto;
     padding-top: 20px;
     padding-bottom: 30px;
@@ -17,13 +17,12 @@ body{
 } 
 
 .input_text{
-    margin-left: 40px;
+    margin-left: 30px;
 }
 .input_text input{
     min-width: 420px;
     height: 2em;
     font-size: 18px;
-    padding-left: 10px;
 }
 .input_text button{
     border: none;  
@@ -31,13 +30,13 @@ body{
     background-color: #82715f;
     width: 100px;
     height: 2em;
-    border-radius: 8px;
-    margin-left: 15px;
+    border-radius: 10px;
+    margin-left: 10px;
     font-size: 18px;
 }
 
 .to_do_list{
-    background-color: #f2eee2;
+    background-color: #E1E2D1;;
     border-radius: 10px;
     width: 540px;
     min-height: 500px;
@@ -46,18 +45,13 @@ body{
     padding: 10px 10px;
 
 }
+h1{
+    color: #78826A;
+}
 .to_do_list h3{
+    color: #78826A;
     text-align: center;
     line-height: 2;
     letter-spacing: 0.3em;
-    border-bottom: 1px dashed #C8C8C8 ;
-}
-
-.to_do_list ul{
-    padding-left: 20px;
-    line-height: 3;
-}
-
-.to_do_list ul li{
     border-bottom: 1px dashed #C8C8C8 ;
 }

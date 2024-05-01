@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 columns</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .container{
+            width: 960px;
+            background-color: blanchedalmond;
+            margin: auto;
+        }
+        .col{
+            width: 280px;
+            height: 100%;
+            background-color: #ccc;
+            margin: 10px;
+            float: left;
+            padding: 10px;
+        }
+        .col img{
+            width: 100%;
+        }
+        .clear-box{
+            clear: left; 
+            /* 避闕浮動物件 直接跑到 浮動物件的最下方 */
+            height: 10px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="col">
+            <img src="https://fakeimg.pl/250x100/aaaaaa/ffffff" alt="" >
+            <h1>Title</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae est ad libero, voluptate a nemo quidem, incidunt cumque dicta voluptas eum blanditiis, expedita minus sapiente! Blanditiis ad nam est vitae?</p>
+        </div>
+        <div class="col">
+            <img src="https://fakeimg.pl/250x100/aaaaaa/ffffff" alt="" >
+            <h1>Title</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae est ad libero, voluptate a nemo quidem, incidunt cumque dicta voluptas eum blanditiis, expedita minus sapiente! Blanditiis ad nam est vitae?</p>
+        </div>
+        <div class="col">
+            <img src="https://fakeimg.pl/250x100/aaaaaa/ffffff" alt="" >
+            <h1>Title</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae est ad libero, voluptate a nemo quidem, incidunt cumque dicta voluptas eum blanditiis, expedita minus sapiente! Blanditiis ad nam est vitae?</p>
+        </div>
+        <div class="clear-box"></div>
+    </div>
+</body>
+</html>
