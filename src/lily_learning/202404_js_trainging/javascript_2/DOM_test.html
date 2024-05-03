@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM test</title>
+    <style>
+        #my-btn{
+            font-size: 100px;
+        }
+        #my-btn:hover{
+            cursor: pointer;
+        }
+        #my-btn:active{
+            background-color: #000;
+            color: #fff;
+           transform: scale(0.8);
+        }
+    </style>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app"> </div>
+    <div id="app1"> 
+        這是簡介
+        <h1>這是標題</h1>
+        <p id="para">這是段落文字</p>
+    </div>
+    <button onclick="hello()">蘋果</button>
+    <button onclick="hello()">香蕉</button>
+    <button onclick="hello()">西瓜</button>
+    <button id="my-btn">+</button>
     <script src="./DOM_test.js"></script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-sizing: border-box</title>
+    <style>
+        .wrap{
+            width:960px;
+            margin:auto;
+            background-color: #ffa;
+
+        }
+        .clearfix{
+            width: 100%;
+            clear: both;
+        }
+        .col{
+            background-color: white;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            float: left;
+            border: 3px double #aaa;
+            box-sizing: border-box; /* 讓盒模（box sizing )維持  300px 不會跑版 */
+            /* box-sizing: content-box; /* 設定為 content-box 則寬度會超過 300px , 會容易因為 margin 及 padding 或 border 的外加尺寸而跑版 */
+             */
+            
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="col">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis ullam magnam laborum natus ad recusandae quam iste necessitatibus excepturi aut aperiam fugiat at officia harum perferendis obcaecati quis, odit ipsam.
+        </div>
+        <div class="col">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis ullam magnam laborum natus ad recusandae quam iste necessitatibus excepturi aut aperiam fugiat at officia harum perferendis obcaecati quis, odit ipsam.
+        </div>
+        <div class="col">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis ullam magnam laborum natus ad recusandae quam iste necessitatibus excepturi aut aperiam fugiat at officia harum perferendis obcaecati quis, odit ipsam.
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</body>
+</html>
