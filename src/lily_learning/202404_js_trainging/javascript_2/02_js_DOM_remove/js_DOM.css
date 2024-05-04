@@ -63,8 +63,7 @@ body{
 }
 
 .to_do_list ul li span button{
-    position: absolute;
-    right: 65px;
+    float: right;
     width: 25px;
     height: 25px;
     color: #fff;
