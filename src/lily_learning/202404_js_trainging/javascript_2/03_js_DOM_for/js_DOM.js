@@ -1,5 +1,12 @@
+let elem_toDo = document.getElementById('to_do');
+elem_toDo.addEventListener("keypress",
+    function(event){
+        if(event.key === "Enter") {
+            document.getElementById('add_List').click();
+        }
+    })
+
 function addList(){
-    let elem_toDo = document.getElementById('to_do');
     let toDoValue = document.getElementById('to_do').value;
 
     function delItem() {
