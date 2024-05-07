@@ -34,30 +34,38 @@
 // console.log(y);
 // console.log(z);
 
-function myFunction()
-{
-    alert('你點擊了按鈕！')
-}
+// function myFunction()
+// {
+//     alert('你點擊了按鈕！')
+// }
 
-let btn = document.getElementById('my-btn');
-btn.onclick = myFunction;
+// let btn = document.getElementById('my-btn');
+// btn.onclick = myFunction;
 
 // let app1 = document.getElementById('app1');
 // alert(app1.children[0].textContent);
 // alert(app1.children[1].textContent);
 
-let para = document.getElementById('para');
-alert(para.textContent);
+// let para = document.getElementById('para');
+// alert(para.textContent);
 
-para.remove();
+// para.remove();
 
-let app1 = document.getElementById('app1');
-alert('app1: '+ app1.textContent);
+// let app1 = document.getElementById('app1');
+// alert('app1: '+ app1.textContent);
 
-app1.remove();
+// app1.remove();
 
-function hello()
-{
+// function hello()
+// {
 
-    alert(event.target.textContent);
-}
+//     alert(event.target.textContent);
+// }
+
+let div1 =  document.getElementById('div1');
+let div2 = document.getElementById('div2');
+
+div1.className = div1.className + " border";
+div2.className = div2.className + " border";
+alert(div1.className);
+alert(div2.className);
