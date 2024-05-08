@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .wrap{
+            width:960px;
+            margin:auto;
+            background: #ccc;
+            display:flex;
+        }
+        .item{
+            width: 10000px; 
+            /* 不要換行 flex-wrap , 則 width 會無效 */
+            margin: 10px;
+            background-color: #ffa;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a asperiores. Ipsum, iusto officiis. Illum pariatur id beatae officia exercitationem?</div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a asperiores. Ipsum, iusto officiis. Illum pariatur id beatae officia exercitationem?</div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a asperiores. Ipsum, iusto officiis. Illum pariatur id beatae officia exercitationem?</div>
+
+    </div>
+</body>
+</html>
