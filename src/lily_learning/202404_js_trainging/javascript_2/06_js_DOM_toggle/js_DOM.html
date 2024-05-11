@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待辦事項管理</title>
+    <link rel="stylesheet" href="./js_DOM.css">
+</head>
+<body>
+    <div class="bg-container">
+       
+        <div class="input_text">
+            <h1>
+                To Do List
+            </h1>
+            <div class="order_input_container">
+                <input type="text" name="to_do" id="to_do" class="item item1" placeholder="新增待辦事項...">
+                <select  name="list_level" id="list_level"  class="item item2" >
+                    <option value="normal" selected>一般</option>
+                    <option value="important" >重要</option>
+                    <option value="urgent" >緊急</option>
+                </select>
+                <button  id ="add_List" class="item item3" onclick="addList()">+</button>
+                <button class="export_btn item item4" onclick="exportList()">匯出清單</button>
+            </div>
+
+
+        </div>
+        <div class="to_do_list">
+            <h3>待辦事項的清單</h3>
+            <div class="to_do_list_container">
+                <ul id="toDoList">
+
+                </ul>
+            </div>
+
+        </div> 
+
+  
+    </div>
+    <script src="./js_DOM.js"></script>
+</body>
+</html>

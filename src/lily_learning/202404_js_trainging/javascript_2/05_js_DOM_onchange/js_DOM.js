@@ -100,7 +100,9 @@ function exportList(){
         console.log(lists);
         for (list of lists) {
             let para_classname = list.parentNode.className; 
+            
             console.log('para_classname: ' + para_classname)
+
             if (para_classname == 'important_li'){
                 starts = "*";
             } else if (para_classname == 'urgent_li'){
