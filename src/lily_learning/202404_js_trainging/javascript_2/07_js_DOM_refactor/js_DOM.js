@@ -1,26 +1,24 @@
-let elem_toDo = document.getElementById('to_do');
+
+let elem_toDo =  document.querySelector('#to_do')  ; 
 let elem_toDo_class= elem_toDo.className ;
-
-
 elem_toDo.addEventListener("keypress",
     function(event)
     {
         if(event.key === "Enter") {
-            document.getElementById('add_List').click();
+            document.querySelector('#add_list').click();
         }
     }
 )
 
-let elem_select = document.getElementById("list_level");
+
+
+let elem_select = document.querySelector("#list_level");
 let elem_select_class= elem_select.className ;
-
-
 // 監聽選擇框的變化
 elem_select.addEventListener("change", 
     function() {
         // 取得當前選擇的選項值
         let selectedValue = elem_select.value;
-
         // 根據選擇的值來決定文字顏色
         if (selectedValue === "important") {
             elem_select.className = elem_select_class + 
@@ -45,11 +43,10 @@ elem_select.addEventListener("change",
 
 
 
-
 function addList(){
-    let toDoValue = document.getElementById('to_do').value;
+    let toDoValue = document.querySelector('#to_do').value;
     let elem_value_select = 
-    document.getElementById('list_level').value;
+    document.querySelector('#list_level').value;
 
 
     if (toDoValue!="") {
@@ -67,10 +64,9 @@ function addList(){
 
         let elem_span =  document.createElement('span');
 
+        let elem_ul = document.querySelector('#to_do_list_ul');
 
-        let app_ul = document.getElementById('toDoList');
-
-        app_ul.append(elem_li);
+        elem_ul.append(elem_li);
         elem_li.append(elem_span);
         elem_span.textContent= toDoValue;
         elem_span.value=toDoValue;
@@ -127,8 +123,7 @@ function toggleButtonText(button) {
 
 
 function exportList() {
-    let lists = document.getElementsByTagName('li');
-
+    let lists  = document.querySelectorAll('li');
     if (lists.length !== 0) {
         let list = "";
         let num = 1;
@@ -136,7 +131,7 @@ function exportList() {
         let starts = "";
         // console.log(lists);
         for (let i = 0; i < lists.length; i++) {
-            let listItems = lists[i].getElementsByTagName('span');
+            let listItems = lists[i].querySelectorAll('span');
             let span_text = "";
             for (let j = 0; j < listItems.length; j++) {
                 let para_classname = listItems[j].parentNode.className; 
