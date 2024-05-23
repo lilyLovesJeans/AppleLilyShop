@@ -6,6 +6,7 @@
     <title>relative 相對定位</title>
     <link rel="stylesheet" href="./reset.css">
     <style>
+        /* 原理: 相對於自己在資料中的位置，去做偏移，當沒有做任何偏移時就不會有任何效果 */
         /* 做磚磈式排版 ，做位移處理會為明顯 */
         ul{
             /* inline-block 跟 inline-block 之間會有一個空白字元的問題，所以要於父層先設定 font-size:0  */
@@ -24,7 +25,7 @@
 
         /* 希望 20號這個item 做偏移 */
         .item19{
-            /* margin-left 這樣做，會連後面的 item 都往右偏移  */
+            /* margin-left 這樣做，會使後面的 item 都往右偏移  */
             /* margin-left: 20px; */
             
             /* 但是我們只要偏移顯示 item20這個項目，所以設定 position: relative */
@@ -32,12 +33,13 @@
             top:0px;  /* 要做 position 定位之後 ， left 及 top 才有作用，否則是沒有作用的*/
             left: 50px;
             background-color: #f00;
-            /* 如果 19要顯示在 20的上面，則要用到 z-index; */
+            /* 如果 item19要顯示在 item20的上面，則要用到 z-index; */
             z-index: 1;
             /*  然後如果要做到  19 20 的位置對調,則可以利用 lift(偏移width+margin*2的寬度),如下 */
             left: 120px;
         }
         .item20{
+            /*  19 20 的位置對調 */
             position: relative;
             left: -120px;
         }
@@ -45,7 +47,7 @@
     </style>
 </head>
 <body>
-    <!--relative 定位: 相對於自己在資料中的位置 去做偏移-->
+    <!--relative 定位:  原理: 相對於自己在資料中的位置，去做偏移，當沒有做任何偏移時就不會有任何效果 -->
    <!-- ul>li.item${$}*50 50個 li 自動產生序列數字(包括class 及 文字)-->
    <ul>
     <li class="item1">1</li>

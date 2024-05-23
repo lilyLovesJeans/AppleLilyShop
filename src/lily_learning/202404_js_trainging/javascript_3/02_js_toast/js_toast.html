@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 系列三：練習2 ── toast 吐司元件</title>
+    <link rel="stylesheet" href="./js_toast.css">
+</head>
+<body>
+    <div class="success_container">
+        <button class="success_btn" onclick="toastSuccess()">成功訂購商品</button>
+        <div class="toast toast-success">
+            ✅ 訂購成功！可以查看 Email 確認訂單細節！
+        </div>
+    </div>
+
+    <hr>
+    <div class="error_container">
+        <button class="error_btn" onclick="toastError()">訂購商品失敗</button>
+
+        <div class="toast toast-error">
+            🚫 抱歉，訂購失敗！請稍後重新嘗試
+        </div>
+    </div>
+
+
+
+    <script src="./js_toast.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+.success_container  ,.error_container{
+    position: relative;  
+}
+
+.success_btn , .error_btn{
+    min-width: 150px;
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    border-bottom: 4px solid #d9d9d9;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    transition: all 0.3s;
+    padding: 10px 20px;
+}
+.success_btn{
+    margin-top: 100px;
+    box-shadow: 0px 5px 10px #05901a;
+}
+.error_btn{
+    margin-top: 100px;
+    margin-left: 30px;
+    box-shadow: 0px 5px 10px #902105;
+}
+.success_btn:hover  {
+    box-shadow: 0px 15px 25px -5px #05901a ;
+    transform: scale(1.03);
+}
+.success_btn:active{
+    box-shadow: 0px 4px 8px #00c864;
+    transform: scale(0.98);
+}
+.error_btn:hover  {
+    box-shadow: 0px 15px 25px -5px #902105 ;
+    transform: scale(1.03);
+}
+.error_btn:active{
+    box-shadow: 0px 4px 8px #ab2706;
+    transform: scale(0.98);
+}
+
+
+.toast{
+    display:none;
+    font-size:15px;
+}
+.toast-success{
+    position: absolute;
+    /* border: 1px solid #0f0; */
+    background-color: #C6F6D5;
+    color: #276749;
+    border-radius: 15px;
+    padding: 12px 15px;
+    top:0;
+    left:150px;
+
+}
+.toast-error{
+    position: absolute;
+    /* border: 1px solid #f00; */
+    background-color: #EDCAC7;
+    color: #902105;
+    border-radius: 15px;
+    padding: 12px 15px;
+    top: 0;
+    left:180px;
+}
+ .toast-success , .toast-error{
+    animation: my_message 5s;
+    opacity:0;
+}
+
+@keyframes my_message{
+    /* from {
+        left: 150px; opacity: 100;}
+    to{ left: 200px;
+        opacity: 0;} */
+        from {
+            top: 100px; opacity: 100;}
+        to{ top: 20px;
+            opacity: 0;}
+    
+} 
+
+
+

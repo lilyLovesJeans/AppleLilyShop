@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 絕對定位 absolute
+    </title>
+    <style type="text/css">
+        div{
+            padding:40px;
+            border: 6px solid #f00;
+            font-size: 24px;
+        }
+        .c{
+            position: absolute;
+            /* c做了絕對定位之後，b 不知道 c在那裹，c 會在原本資料所在的位置 */
+            /* 現在設定 left:0 top:0 ,它會定到那裹去? 這時它會往上找父層有沒有定位，找到有定位的父層為止，如果 html body div a div b , 都沒有定位，它最後會定在視窗window上 */
+            /*而且它只會定位一次*/
+            left:0;
+            bottom: 0;
+            border-color:#00f;
+        }
+        /* 如果定到 body身上，因為body 會被撐開，如果設定 bottom:0 ,則會定到body的最下方 */
+        body{
+            position: relative;
+        }
+        /* 也可以定到 html上 */
+        /* html{
+            position: relative;
+        } */
+    </style>
+</head>
+<body>
+    <!-- 當把物件設定為絕對定位時，它會將這個物件會從資料當中抽掉，原理跟 fixed 非常相像 -->
+    <div class="a">a
+        <div class="b">b
+            <div class="c">c
+            </div>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti doloremque reprehenderit dolore est expedita atque illo, a quam itaque quaerat!</p>
+    <p>Dolorum numquam cupiditate natus unde amet quaerat quia eaque, corrupti quae earum modi vero impedit facilis, illo veniam consequuntur odit.</p>
+    <p>Consequuntur nisi voluptatem temporibus ex assumenda quas sunt optio repellendus blanditiis nam architecto, inventore saepe quisquam rerum pariatur vel quibusdam?</p>
+    <p>Est ab quas, earum accusamus aliquid voluptas aliquam, distinctio soluta, facilis sequi deserunt at! Deleniti labore perferendis molestias nihil modi.</p>
+    <p>Perspiciatis at, temporibus vero aliquam, eveniet tenetur ad rerum deleniti molestiae quidem, voluptatem ducimus! Soluta accusamus illum sed repellendus? Voluptatum?</p>
+    <p>Dolore corporis, natus tenetur, ipsa, sed aspernatur tempora commodi modi dignissimos et voluptatem beatae. Amet ea alias quibusdam? Iusto, suscipit?</p>
+    <p>Ad ipsam soluta repellat minus aspernatur cupiditate, autem, quaerat quisquam magnam, voluptate neque cum asperiores inventore! Minus deleniti officia earum.</p>
+    <p>Placeat aperiam odio quam quibusdam nesciunt, quos sapiente quisquam illo porro, ducimus, id eveniet commodi laudantium sit ut dolore magni.</p>
+    <p>Doloribus velit, iure commodi ullam fugiat laborum inventore nisi consectetur consequatur porro ipsa modi amet ut itaque est tempore aspernatur?</p>
+    <p>Expedita ipsum repellendus vitae quibusdam, eveniet necessitatibus consectetur nulla molestiae incidunt dignissimos? Minus natus impedit eius nisi nostrum illum! Cupiditate.</p>
+    <p>Labore distinctio enim asperiores deleniti natus accusamus sed incidunt repellat, hic ducimus earum aperiam voluptates magnam ut, ratione in voluptas.</p>
+    <p>Doloribus facere soluta, reiciendis numquam rem corporis maxime. At, veniam expedita. Voluptatum iusto quasi repellat minus fuga natus quam aliquam.</p>
+    <p>Iusto aut, consequatur nemo fuga, incidunt animi reprehenderit nihil consequuntur nisi tempore excepturi? Necessitatibus blanditiis iste inventore sapiente quasi animi.</p>
+    <p>Laudantium inventore sed quia saepe? Exercitationem, sint. Aliquam voluptate porro error eaque dolore. Numquam laborum obcaecati tempore, minus sapiente iste.</p>
+    <p>Sint, magnam veritatis quod, tenetur nesciunt rerum dolorum minus fugiat assumenda voluptatem enim mollitia debitis quo, voluptatibus repellendus laboriosam distinctio.</p>
+    <p>Pariatur doloribus hic fugiat voluptas, placeat assumenda tenetur dolore qui ipsam labore, accusamus quas. Totam perferendis quidem deserunt vitae suscipit.</p>
+    <p>Obcaecati tempore earum facilis perferendis, vitae voluptatum error vero assumenda eius distinctio culpa expedita, alias, ab nam suscipit praesentium ipsum?</p>
+    <p>Consectetur a voluptas nihil enim quibusdam adipisci nesciunt soluta harum natus aspernatur. Aliquam beatae quisquam minus earum asperiores? Alias, accusantium.</p>
+    <p>Facilis ex maxime tempore itaque voluptatibus debitis temporibus magnam sint exercitationem, at ad maiores ipsam, praesentium nemo consectetur nulla quis!</p>
+    <p>Quam iste eius reiciendis, labore error et numquam sapiente, quae exercitationem nam voluptas dolor itaque eum. Placeat nobis magnam non?</p>
+    <p>Ullam fugiat veniam quia molestias earum itaque neque? Numquam sit excepturi autem impedit provident recusandae a iste laudantium alias in.</p>
+    <p>Nisi tempore minima quo nam ab cum hic illo, unde quaerat dolor ipsa vel similique, libero culpa sint optio! Animi.</p>
+    <p>Velit numquam nam, accusamus eveniet sequi, excepturi similique corrupti, quam ut harum in rerum magnam totam atque quaerat! Animi, corrupti.</p>
+    <p>Totam sit ratione ad! Eos cum temporibus, harum esse, tempora corporis maiores deleniti neque laborum commodi, atque incidunt unde ipsa.</p>
+    <p>Totam veniam fuga debitis, provident soluta amet voluptate, perferendis unde, veritatis commodi dolores! Voluptas mollitia quo recusandae voluptatibus, quis ex.</p>
+    <p>Voluptas illum incidunt possimus voluptates dolorem aut ipsa iste ducimus maxime, nihil natus culpa hic repudiandae ex explicabo. Nam, ipsa.</p>
+    <p>Velit, voluptas omnis debitis illum consequuntur fugit ab eveniet. Veniam inventore numquam dignissimos laboriosam facilis eaque dolores iusto at provident!</p>
+    <p>Nulla eum quam blanditiis impedit molestias perspiciatis exercitationem cumque, veritatis, inventore autem, voluptatem explicabo saepe velit voluptate enim quaerat earum.</p>
+    <p>Cupiditate modi soluta eius voluptatum, autem saepe quo impedit iure dolores rem, cumque magnam! Quis architecto cum illo omnis recusandae!</p>
+    <p>Libero error dicta, doloribus perspiciatis veniam quis, at numquam ipsam eum odit reprehenderit recusandae praesentium ex inventore consequatur similique facilis.</p>
+</body>
+</html>
