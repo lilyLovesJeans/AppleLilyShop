@@ -1,0 +1,104 @@
+
+.btn-login, .btn-post{
+    margin: 30px auto;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+.btn-login {
+    border: 2px solid #ffc0cb;
+    background-color: #f6a3a3;
+}
+.btn-post{
+    border: 2px solid #58a05c;
+    background-color: #59855e;
+}
+.btn-login:hover, .btn-post:hover{
+    cursor:pointer
+}
+.btn-login:active   , .btn-post:active{
+    scale: 90%;
+}
+.modal_wrap{
+    display:none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    animation: showModal 1s ease-out forwards; /* 新增動畫 */
+}
+
+/* 定義動畫規則 */
+@keyframes showModal {
+    from {
+        opacity: 0; /* 從透明度 0 開始 */
+    }
+    to {
+        opacity: 1; /* 透明度達到 1 */
+    }
+}
+
+
+#login-modal,#post-modal {
+
+    max-width: 375px;
+    min-height: 445px;
+    background-color: #242424;
+    color:#F2F2F2;
+    margin: auto;
+    padding : 20px 20px 0px 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    line-height: 4.5em;
+    font-size: 18px;
+}
+input{
+    width: 200px;
+    height: 35px;
+    border-radius: 20px;
+    padding-left: 15px;
+}
+
+#btn-close-login{
+    background-color: #f6a3a3;
+    color:#242424;
+    font-size: 16px;
+    width: 55px;
+    margin-left:80%
+}
+
+#post-modal{
+    padding : 20px 20px 0px 40px;
+    line-height: 4.5em;
+}
+#post-modal input{
+    width: 250px;
+    border-radius:0px;
+    padding-left: 6px;
+}
+
+textarea{
+    min-height: 200px;
+    width: 250px;
+    padding: 6px;
+}
+#login-modal h1 {
+    color: #f6a3a3;
+}
+
+#post-modal h1 {
+    color: #59855e;
+}
+
+
+#btn-close-post{
+    background-color: #59855e;
+    color:#242424;
+    font-size: 16px;
+    width: 55px;
+    margin-left:80%
+}
