@@ -1,0 +1,126 @@
+    /* Hex Color Code 
+    #ebcbbb 膚色
+    #6c999a tiffiny綠
+    #0e2222 深藍色
+    #DF3079 粉色  
+
+    */
+*{
+    font-family: "Noto Sans TC", sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;   /* 要設定高度 align-items 才有效 */
+    background-color: #ebcbbb ;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0e2222;
+    width: 540px;
+    height: 450px ;
+    background: #6c999a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+.header{
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 35px;
+}
+
+input{
+    margin-top: 30px;
+    width: 450px;
+    height: 40px ;
+    font-size: 18px;
+    background: transparent;
+    transition: 0.1s ease;
+    border: 1px solid #0e2222;
+    border-radius: 5px;
+    color: #212121;
+}
+
+
+.labelline{
+    position: absolute;
+    background: #6c999a;
+    margin-top: -33px;
+    margin-left: 5px;;
+    transition: 0.2s ease;
+}
+
+input:focus{
+    outline: none;   /* 不要秀出邊框 */
+   
+}
+
+input:focus + .labelline ,
+input:valid + .labelline{
+    /* color: #0e2222; */
+    color: #DF3079;
+    padding: 0.12px;
+    transform: translate(1.5px, -21px) scale(0.9);
+    z-index: 1111;
+}
+
+.err{
+    visibility: hidden;
+    color:#f00;
+    font-size: 13px;
+}
+
+ /* button 要變更位置，需要在外面包一層wrap .button-container */
+.button-container {    
+    display: flex;
+    justify-content:end;
+    width: 100%;
+    margin-top: 20px;
+
+}
+button.submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #0056b3 ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.submit:hover {
+    background-color: #0e2222;
+}
+
+
+.toast-success{
+    display:none;
+    font-size:15px;
+    position: absolute;
+    background-color: #C6F6D5;
+    color: #276749;
+    border-radius: 15px;
+    padding: 12px 15px;
+    top:0;
+    left: 20px;
+
+}
+
+ .toast-success {
+    animation: my_message 5s;
+    opacity:0;
+}
+
+@keyframes my_message{
+        from {
+            top: -20px; opacity: 100;}
+        to{ top: -80px;
+            opacity: 0;}
+    
+} 

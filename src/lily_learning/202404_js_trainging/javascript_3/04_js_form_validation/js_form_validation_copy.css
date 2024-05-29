@@ -1,0 +1,94 @@
+  
+    /* Hex Color Code 
+    #ebcbbb
+    #6c999a
+    #0e2222;   
+
+    */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebcbbb;
+}
+.container{
+    text-align: center;
+    width: 540px;
+    height: 515px;
+    background-color:#6c999a ;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+
+}
+form .header{
+    margin-top: 15px;
+    font-size: 30px;
+    color: #0e2222;
+}
+hr{
+    display: inline-block;
+    width:80%;
+}
+.entry_area{
+    position: relative;
+    line-height: 20px;
+}
+.entry_area input{  
+    margin: 30px 30px;
+    width: 85%;
+    outline: none;
+    font-size: 1.5em;
+    padding: 0.3px;
+    padding-left:5px ;
+    line-height: 40px;
+    border-radius: 10px;
+    border: 2px solid #f0ffff;
+    background: transparent;
+    transition: 0.1s ease;
+    z-index: 1111;
+}
+
+.labelline{
+    position: absolute;
+    top:40%;
+    left: 8%;
+    font-size: 1.1em;
+    lighting-color: #f0ffff;
+    background:#6c999a ;
+    padding: 0.25px;
+    transition: 0.2s ease;
+}
+
+
+.entry_area input:focus, 
+.entry_area input:valid{
+    color: #0e2222;   
+    border: 3px solid #ebcbbb;
+}
+
+.entry_area input:focus + .labelline ,
+.entry_area input:valid + .labelline{
+    color: #ebcbbb;
+    padding: 0.12px;
+    transform: translate(1.2px, -23px) scale(0.9);
+    z-index: 1111;
+}
+
+.submit{
+    width: 120px;
+    font-size: 1.2em;
+    border: 2px solid #ffff;
+    border-radius: 10px;
+    background: transparent;
+    padding: 5px 10px;
+    color:  #0e2222;   
+}

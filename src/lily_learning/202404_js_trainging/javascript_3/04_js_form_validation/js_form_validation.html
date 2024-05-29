@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 系列三：練習4 ── 表單驗證</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./js_form_validation.css">
+</head>
+<body>
+    <div class="container">
+        <form action="" method="get" >
+            <div class="header">註冊帳戶
+                <hr>
+            </div>
+                  
+            <input type="text" name="NickName" id="nick-name" required>
+            <div class="labelline">暱稱</div>
+            <div class="err err-nick-name">
+                *不能為空白、必須在40字以內
+            </div>
+                                
+            <input type="email"
+            name="Email" id="email" required>
+            <div class="labelline">Email 電子郵件</div>
+            <div class="err err-email">*不能為空白、必須包含 @ 符號</div>
+    
+            <input type="password" 
+            name="current-password" id="current-password" required>
+            <div class="labelline">密碼</div>
+            <div class="err err-password">
+                * 不能為空白、必須在8字以上、必須在100字以內
+            </div>
+    
+            <div class="button-container">
+                <button class="submit" type="submit" onclick="btn_submit(event)">註冊
+                
+                    <div class="toast-success">
+                        ✅ 註冊成功！可以查看 Email 確認細節！
+                    </div>
+                
+                </button>
+ 
+            </div>
+        </form>
+    </div>
+ 
+
+<script src="./js_form_validation.js"></script>
+
+</body>
+</html>
