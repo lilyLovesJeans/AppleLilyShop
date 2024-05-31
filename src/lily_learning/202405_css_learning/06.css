@@ -20,7 +20,8 @@ nav a{
     padding: 6px 20px;
     font-size: 16px;
     background-color: #000;
-    transition: 0.5s;
+    transition: 0.5s; /* 延遲動畫 */
+    
 }
 
 nav a:hover{
