@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+       *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+       }
+       body{
+        background-color: #e5e5e5;
+
+       }
+       .main-bar{
+        background-color: #22272b !important;
+        ;
+        display: flow-root;
+        padding: 0 10%;
+       }
+       #check{
+        display:none;
+       }
+       .logo-header{
+        display:table;
+        float:left;
+        vertical-align: middle;
+        padding: 0;
+        color: #efbb20;
+        margin: 0;
+        width: 100px;
+        height: 60px;
+        position: relative;
+        z-index: 9;
+        transition: all 0.5s;
+
+       }
+       .logo-header:before{
+
+        content:"";
+        position:absolute;
+        bottom: 0;
+        height: 100%;
+        z-index: -1;
+        right: -50px;
+        width: 80%;
+        transform: skew(30deg);
+        background-color: #ffe10a;
+       }
+
+       .logo-header:after{
+        content:"";
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        z-index: -1;
+        right: 10%;
+        width: 2000px;
+        background-color: #ffe10a;
+       }
+
+       .logo-header a{
+        color: #22272b;
+        font-size: 33px;
+        font-weight: 600;
+        line-height: 70px;
+        text-decoration: none;
+       }
+    </style>
+</head>
+<body>
+    <div class="main-bar">
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <div class="logo-header">
+                <a href="#">Apple.lily</a>
+            </div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
