@@ -1,0 +1,50 @@
+body{
+    background-color: gray;
+}
+
+.carousel{
+    width: 500px;
+    margin: 0 auto;
+    border: 2px dashed #000;
+    background-color: #fff;
+    /* overflow:hidden;
+    position: relative; */
+}
+/* .container{
+    display:flex;
+    position: absolute;
+} */
+.content{
+    height: 100px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 100px;
+    text-align: center;
+}
+
+.red{
+    background-color: #ff0000;
+}
+.yellow{
+    background-color: #d1d100;
+}
+.blue{
+    background-color: #0000ff;
+}
+.purple{
+    background-color: #800080;
+}
+
+.btnContainer{
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn{
+    width: 80px;
+    height: 40px;
+    font-size: 30px;
+}

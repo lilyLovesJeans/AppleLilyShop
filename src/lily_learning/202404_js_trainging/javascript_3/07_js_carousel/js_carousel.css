@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 整個carousel區塊 */
+.main-carousel{
+    position: relative;
+    width:100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/* 圖片顯示區域 */
+.main-carousel .carousel-inner{
+    width: 100%;
+    height: 100%;
+
+}
+
+/* 所有圖片的 div，設定為絕對位置讓圖片層疊 */
+.main-carousel .carousel-inner .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: left .5s;
+}
+
+/* 圖片本身 */
+.main-carousel .carousel-inner .slide > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.left-slide-btn, .right-slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    outline: none;
+}
+
+.left-slide-btn {
+    left: 10px;
+}
+
+.right-slide-btn {
+    right: 10px;
+}
+
+
+.slide-dots {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    z-index: 20;  /* Ensure dots are above slides and buttons */
+}
+.slide-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+.active-dot {
+    background-color: #1616ed;
+}
