@@ -2,18 +2,18 @@ const carsouselInner = document.querySelector('.carousel-inner');
 const slides = carsouselInner.children;
 const imgCount = slides.length;
 const slides_position = [];
-const slideDots = document.querySelector('.slide-dots');
+const slideDots = document.querySelector('.slide-dots')
 
-// Generate dots
-for (let i = 0; i < imgCount; i++) {
+//Generate dots
+for (let i = 0; i< imgCount ; i++){
     const dot = document.createElement('span');
     dot.classList.add('slide-dot');
-    dot.dataset.index = i;
+    dot.dataset.index= i;
     slideDots.appendChild(dot);
 }
 
-// Set the active dot
-function setActiveDot(index) {
+//set the active dot
+function setActiveDot(index){    
     const dots = document.querySelectorAll('.slide-dot');
     dots.forEach(dot => dot.classList.remove('active-dot'));
     dots[index].classList.add('active-dot');
@@ -38,7 +38,7 @@ function showDefault_left() {
 function skipSlide(targetSlide, dist) {
     slides_position.forEach((x, i, positions) => {
         positions[i] = x - dist;
-        slides[i].style.left = `${positions[i]}%`;
+        slides[i].style.left =  slides_position[i] + `%`;
     });
     setActiveDot(targetSlide);
 }
@@ -69,14 +69,21 @@ leftSlideBtn.addEventListener('click', function () {
     }
 });
 
-// Add click event to dots
-slideDots.addEventListener('click', function (e) {
-    if (e.target.classList.contains('slide-dot')) {
+// Add clieck event to dots
+addEventListener('click',
+function(e){
+    // if (e.target.classList.contains('slide-dot')){
+        console.log(e);
+        console.log('curentIndex: ' +currentIndex);
+        console.log('dataset-index: '+e.target.dataset.index)
         const targetIndex = Number(e.target.dataset.index);
-        const dist = 100 * (targetIndex - currentIndex);
+        const dist = 100 * (targetIndex-currentIndex);
+        console.log('dist: '+dist);
         skipSlide(targetIndex, dist);
         currentIndex = targetIndex;
-    }
-});
+        console.log('currentIndex: '+currentIndex)
+    // }
+}
+)
 
 showDefault();
