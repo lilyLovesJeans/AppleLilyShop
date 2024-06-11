@@ -12,7 +12,9 @@
         .container{
             width: 960px;
             background-color: blanchedalmond;
-            margin: auto;
+            margin: auto; 
+            /* 把剩下的空間平均分配 */
+            border: 1px solid black
         }
         .col{
             width: 280px;
@@ -25,12 +27,17 @@
         .col img{
             width: 100%;
         }
-        .clear-box{
-            clear: left; 
-            /* 避闕浮動物件 直接跑到 浮動物件的最下方 */
+        /* 為了讓父層可以抓到子層的高度，
+           須在子層的最後加上一個div.clear-box ,這樣就可以把父層撐開
+        */
+         /* 避闕浮動物件 直接跑到 浮動物件的最下方 */
+        
+         .clear-box{
+            clear: both; 
             height: 10px;
-            background-color: hotpink;
-        }
+            width: 100%;
+            background-color: red;
+        } 
     </style>
 </head>
 <body>
