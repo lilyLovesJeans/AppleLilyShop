@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex</title>
+    <title>金魚都能懂的網頁設計入門-第十二天 -排版的聖品 flex</title>
     <link rel="stylesheet" href="./reset.css">
     <style>
         .wrap{
@@ -11,10 +11,12 @@
             margin:auto;
             background: #ccc;
             display:flex;
+            
+            /* flex-wrap: wrap; */
         }
         .item{
+            /* 不要換行 ,則 width 如果設定超過300會無效，它會保持均寬 */
             width: 10000px; 
-            /* 不要換行 flex-wrap , 則 width 會無效 */
             margin: 10px;
             background-color: #ffa;
         }
@@ -23,10 +25,12 @@
 </head>
 <body>
     <div class="wrap">
-        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a asperiores. Ipsum, iusto officiis. Illum pariatur id beatae officia exercitationem?</div>
-        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a asperiores. Ipsum, iusto officiis. Illum pariatur id beatae officia exercitationem?</div>
-        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a asperiores. Ipsum, iusto officiis. Illum pariatur id beatae officia exercitationem?</div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a asperiores. Ipsum, iusto officiis. Illum pariatur id beatae officia exercitationem?
 
+        </div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a </div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempora maxime eligendi quidem animi, assumenda, mollitia provident necessitatibus vero a asperiores. Ipsum, iusto officiis. Illum pariatur id beatae officia exercitationem?</div>
+      
     </div>
 </body>
 </html>
