@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> box size</title>
+    <title> 金魚都能懂的網頁設計入門-第十天 -換個新盒子</title>
     <style>
         div{
             width: 300px;
             background-color: chocolate;
             border: 10px solid red;
             padding: 10px;
-            box-sizing: border-box; /* 這樣 div 的尺寸就會是 width 所指定的尺寸 */
-            /* box-sizing: content-box; */
+            /* box-sizing: border-box; 這樣 div 的尺寸就會是 width 所指定的尺寸: 300px ,這樣就不用再計算 box-model尺寸 */
+            box-sizing: content-box;
+            /*width指定給內容物的寬度.
+  所以 padding 及 border就會往外加。*/ 
             
 
         }
