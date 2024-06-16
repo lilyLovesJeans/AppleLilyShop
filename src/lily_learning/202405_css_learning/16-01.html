@@ -11,19 +11,22 @@
             border: 6px solid #f00;
             font-size: 24px;
         }
+        /* .a{position:relative}
+        .b{position:relative} */
         .c{
             position: absolute;
             /* c做了絕對定位之後，b 不知道 c在那裹，c 會在原本資料所在的位置 */
             /* 現在設定 left:0 top:0 ,它會定到那裹去? 這時它會往上找父層有沒有定位，找到有定位的父層為止，如果 html body div a div b , 都沒有定位，它最後會定在視窗window上 */
             /*而且它只會定位一次*/
             left:0;
-            bottom: 0;
+            bottom:0;
             border-color:#00f;
+            padding: 5px;
         }
         /* 如果定到 body身上，因為body 會被撐開，如果設定 bottom:0 ,則會定到body的最下方 */
-        body{
+        /* body{
             position: relative;
-        }
+        } */
         /* 也可以定到 html上 */
         /* html{
             position: relative;
