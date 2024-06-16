@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金魚都能懂的網頁設計入門-第十六天 -排個稀飯版</title>
+    <link rel="stylesheet" href="./reset.css">
+
+    <style>
+        .header{
+            display:flex;
+            padding: 6px 10px;
+            background-color: #000;
+
+        }
+        /* 因為logo 跟超連結沒有對齊, 所以要在logo 的超連結加上一個class logo */
+
+        .header .logo {
+            /* line-height: 52px;  因為圖片沒有置中 換別的方式*/
+            display:inline-block;
+            padding: 6px 0; 
+            /* 計算方式: 圖片高 40px ＋ 上下padding 6px*2 = 52px 就等於超連結的 line-height: 52px 這樣就可以置中 */
+        }
+        .header nav{
+            text-align: right;  /* flex 要設定寬度 ，才能對齊*/
+            width: 100%;
+            font-size: 0;  /* 為了讓超連結之間不要有間隙  */
+           
+        } 
+
+
+        .header nav a{
+            font-size:16px;
+            color: #fff;
+            text-decoration: none;   
+            display: inline-block;
+            line-height: 52px;  
+            padding: 0px 10px;    /* 這樣選單就出現了 */
+              
+        }
+        .header nav a:hover{
+            background-color: #fa0;
+        }
+
+        /* banner 的圖片沒有滿版, 所以要設定寬度 */
+        .banner img{
+            width: 100%;
+            /* 高度等比例去跑就好了 */
+        }
+        .path{
+            display: flex;
+ 
+        }
+        .path li{
+            padding: 6px 8px;
+            position: relative;
+        }
+        .path li a{
+   
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        /* 缺斜線，使用偽類 ,通常路徑為淡灰色 */
+        .path li + li::before {
+            content:'/';
+            color: #aaa;
+            position: absolute;  /* 定位在li的左邊  */
+            left: 0 ;
+            
+        }
+        .item h3{
+            font-size: 36px;
+            padding: 0px 0px 30px;
+        }
+        /* 再來做 about 就是 wrap, wrap 是固定寬的容器 */
+        .wrap{
+            width: 960px;
+            margin: auto;
+        }
+        .about {
+            padding: 40px 0px 60px;
+        }
+
+        .about .item img{
+            border-radius: 50%; /* 圓型圖片 */ 
+        }
+        .about .wrap{
+            display: flex;
+        }
+        .about .wrap .item{
+            width: 300px; 
+            /* 如果設定超過300，系統會自動更改寬度至最適合的寬度 */
+            margin: 0 10px;
+            text-align: center;
+        }
+        .about > h2{
+            width: 960px;
+            font-size: 42px;
+            margin: auto;
+            text-align: center;  /* 要設定寬度，才能置中 */
+            padding: 20px 0;
+        }
+        .about > p{
+            width: 660px;  /* 做小一點，強制它換行 */
+            margin: auto;
+            padding: 0px 0px  40px;
+            text-align: center;
+        }
+        
+        .products{
+            background-color: #aaa ;
+            margin-top: 20px;
+        }
+        .products .wrap{
+            display: flex;
+        }
+        .products .item{
+            width: 50%;
+        }
+        .products .item img{
+            width: 100%;   /*寬度佔滿左欄 */    
+           /* 頁尾有一個小小的瑕疵，一點點空白，所以要設定 vertical-align: bottom 就可以解決*/
+           vertical-align: bottom;
+        }
+        .products .text{
+            display: flex;
+            flex-direction: column; /* 要設定 flex-direction:column 直排， 才能做垂直置中 */
+            justify-content: center; 
+            padding: 10px 20px;
+            text-align: center;
+            
+        }
+
+        .service{
+            padding: 40px 0px;
+            background-color: #edbbbb;
+        }
+        .service > h2{
+            width: 960px;
+            margin: auto;
+            text-align: center; 
+            font-size: 42px; 
+            padding: 20px 0px;              
+        }
+        .service > p{
+            width: 960px;
+            margin: auto;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+        .service .wrap{
+            display: flex;
+        }
+        .service .item{
+            margin: 0px 10px;
+            width: 300px; 
+            /* 如果 display: flex ， 寬度可以設定超過，它會自動做調整 */
+            text-align: center;
+        }
+        .service .item img{
+            width: 100%;
+        }
+
+        /* 頁尾 */
+        .footer{
+            text-align: center;
+            background-color: #000;
+            color: #888;  /* 文字不要太搶眼 */
+            padding: 20px 0px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 做個固定寬度的版面 -->
+    <!-- 需要 導覽列 logo banner 二欄畫面 頁尾區塊  -->
+    <!-- 導覽列 通常會做在滿版的區塊中 ，所以外面要一個 header -->
+
+    <div class="header">
+        <!-- logo 區 通常是80*40px , 加超連結-->
+
+        <a href="#" class=logo ><img src="https://picsum.photos/80/40/?random=5" alt="網站名稱"> </a>
+
+        <nav>
+            <a href="#">關於我們</a>
+            <a href="#">最新消息</a>
+            <a href="#">產品</a>
+            <a href="#">服務</a>
+            <a href="#">聯絡我們</a>
+            <a href="#">網站地圖</a>
+        </nav>
+    </div>
+
+    <!-- 滿版內容區 -->
+    <div class="banner">
+        <!-- 圖片要蠻大張的 1200*300px -->
+        <img src="https://picsum.photos/1200/300/?random=2" alt="banner">
+
+    </div>
+    <!-- 固定寬的麵包屑 ： 就是網站路徑列 ,就是糖果屋延路灑麵包屑來知道回家的路徑-->
+    <ul class="path">
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">最新消息</a></li>
+        <li><a href="#">首頁</a></li>
+    </ul>
+    
+    <!-- 關於我的介紹-->
+    <div class="about">
+        
+        <h2>關於我們</h2>  
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quia, voluptas autem consequuntur neque harum molestias pariatur iure quod reiciendis?</p>
+        <div class="wrap">
+            <!-- 做三欄的畫面小小的icon  50*50px -->
+            <div class="item">
+                <img src="https://picsum.photos/50/50/?random=1" alt="item">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eveniet facere magnam voluptatibus mollitia maxime adipisci ducimus nulla nam tempora!</p>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/50/50/?random=2" alt="item">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eveniet facere magnam voluptatibus mollitia maxime adipisci ducimus nulla nam tempora!</p>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/50/50/?random=3" alt="item">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eveniet facere magnam voluptatibus mollitia maxime adipisci ducimus nulla nam tempora!</p>
+            </div>
+        </div>
+    </div>
+    <div class="products">
+        <div class="wrap">
+            <!-- 做二欄的畫面 ，左圖右說明 -->
+            <div class="item img">
+                <img src="https://picsum.photos/300/200/?random=1" alt="item">
+            </div>
+            <div class="item text">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eveniet facere magnam voluptatibus mollitia maxime adipisci ducimus nulla nam tempora!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 再來做一個四欄的項目 -->
+    <div class="service">
+        <h2>服務項目</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, quam!</p>
+        <div class="wrap">
+            <div class="item">
+                <img src="https://picsum.photos/300/200/?random=3" alt="item">
+                <h3>title</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/200/?random=5" alt="item">
+                <h3>title</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/200/?random=7" alt="item">
+                <h3>title</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/200/?random=9" alt="item">
+                <h3>title</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; copyright 2018 by lily
+    </div>
+</body>
+</html>
