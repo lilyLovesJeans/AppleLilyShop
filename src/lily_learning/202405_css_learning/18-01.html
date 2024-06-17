@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金魚都能懂的網頁設計入門-第十七天 - 網頁動畫</title>
+
+    <style type="text/css">
+        .btn{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000;
+            text-decoration: none;
+            color: #fff;
+            /* 動畫通常做在本身物件上 */
+            /* transition： 屬性 轉換時間 延遲執行的時間 速度； */
+
+            /* transition: 全部屬性 1秒鐘 延遲無 速度ease預設 */
+            /* transition: all .3s 0s ease ; */
+
+            /* transition: 只有背景顏色須要做動畫 3秒鐘 延遲無 速度ease預設 */
+            /* transition: background-color 3s 0s ease ; */
+
+          /* transition: 還有一個分組的概念 , 可以用逗號區格，先後執行順序 */
+          /* 下列設定會在一秒鐘之後執行 backckground-color的動畫，但是會在一開始先執行padding 的動畫 */
+          transition: 
+          padding 1s 0s ease,
+          background-color 1s 1s ease ;
+
+        }
+        .btn:hover{
+            background-color: #f00;
+            color: #ff0; 
+            padding: 10px 30px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" class="btn">送出</a>
+    
+</body>
+</html>
