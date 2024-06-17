@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+
+}
+body{
+    background-color: #f1f1f1;
+}
+.bbs {
+    position: relative;
+    margin: 30px auto;
+    max-width: 560px;
+    font-size: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    padding: 20px;
+
+}
+
+
+.bbs input ,
+.bbs textarea{
+    margin-bottom: 20px;
+}
+.bbs label,
+.bbs input,
+.bbs textarea
+ {
+    font-size:inherit;
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+.bbs input{
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    line-height: 30px;
+}
+
+.bbs input:focus
+{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 2px;
+    color: #707070;
+}
+.bbs textarea{
+    resize: none;
+    border: 1px solid #0366d6;
+    border-radius: 5px;
+
+}
+.bbs textarea:focus{
+    border: none;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    color: #707070;
+}
+
+
+
+.bbs .btn-container {
+    text-align: right;
+}
+
+.bbs .btn {
+    
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    width: auto;
+}
+.bbs .btn:hover{
+    background-color: #0366d6;
+}

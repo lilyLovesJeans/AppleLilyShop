@@ -4,40 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript 系列四：第1課 ── autosize 套件</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .bulletinBoard {
-            padding: 20px;
-        }
-        .bulletinBoard label,
-        .bulletinBoard input,
-        .bulletinBoard textarea,
-        .bulletinBoard button {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        .bulletinBoard button {
-            width: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="./01_js_autosize.css">
+
 </head>
 <body>
-    <div class="bulletinBoard">
-        <label for="nickname">膩稱</label>
-        <input id="nickname" type="text">
-        <label for="message">留言</label>
-        <textarea name="message" id="message" cols="30" rows="3"></textarea>  
-        <button class="submit">送出</button>
+    <div class="bbs">
+        <label class="labelline" for="nickname">暱稱</label>
+        <input id="nickname" type="text"  spellcheck="false">
+        <label class="labelline"  for="message">留言</label>
+        <textarea name="message" id="message"  rows="3" spellcheck="false"></textarea>  
+        <div class="btn-container">
+            <a href="#" class="btn">送出</a>
+        </div>
     </div> 
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/6.0.1/autosize.min.js" integrity="sha512-OjjaC+tijryqhyPqy7jWSPCRj7fcosu1zreTX1k+OWSwu6uSqLLQ2kxaqL9UpR7xFaPsCwhMf1bQABw2rCxMbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        autosize(document.querySelectorAll('textarea'));
-    </script>
+    <script src="./01_js_autosize.js"></script>
 </body>
 </html>
