@@ -9,19 +9,13 @@
 </head>
 <body>
     <div class="bbs">
-        <div class="inputBox">
-            <input type="text" required spellcheck="false">
-            <span class="labelline" >暱稱</span>
-        </div>
-        <div class="inputBox">
-            <textarea name="message" rows="3" spellcheck="false" required></textarea>  
-            <span class="labelline" >留言</span>
-        </div>
-
+        <label class="labelline" for="nickname">暱稱</label>
+        <input id="nickname" type="text"  spellcheck="false">
+        <label class="labelline"  for="message">留言</label>
+        <textarea name="message" id="message"  rows="3" spellcheck="false"></textarea>  
         <div class="btn-container">
             <a href="#" class="btn">送出</a>
         </div>
-
     </div> 
 
 

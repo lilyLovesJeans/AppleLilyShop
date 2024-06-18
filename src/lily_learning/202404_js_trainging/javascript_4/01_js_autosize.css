@@ -9,62 +9,75 @@ body{
     background-color: #f1f1f1;
 }
 .bbs {
-    position: relative;
-    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;   
+    margin: 40px auto;
     max-width: 560px;
-    font-size: 20px;
-    background-color: #fff;
+    min-height: 50vh;
+    background-color: #1d2b3a;
     border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-    padding: 20px;
-
+    box-shadow: rgba(116, 114, 114, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    padding: 30px;
+    gap: 30px;
 }
 
-
-.bbs input ,
-.bbs textarea{
-    margin-bottom: 20px;
+.inputBox{
+    position: relative;
+    width: 400px;
 }
-.bbs label,
-.bbs input,
-.bbs textarea
- {
-    font-size:inherit;
-    display: block;
+.inputBox input , textarea{
     width: 100%;
-    padding: 5px;
-}
-.bbs input{
-    border: 1px solid #aaa;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: #1d2b3a;
     border-radius: 5px;
-    line-height: 30px;
-}
+    outline: none;
+    padding: 10px;
+    /* color: #fff; */
+    color: #bdbabac9;
+    font-size: 1.5em;
+    transition: 0.5s;
+ }
 
-.bbs input:focus
-{
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 0px 2px;
-    color: #707070;
-}
-.bbs textarea{
+ .inputBox textarea{
     resize: none;
-    border: 1px solid #0366d6;
-    border-radius: 5px;
+ }
 
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255,255,255,0.25);
+    transition: 0.5s;
 }
-.bbs textarea:focus{
-    border: none;
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-    color: #707070;
-}
+ .inputBox input:focus ~ span ,
+ .inputBox input:valid ~ span ,
+ .inputBox textarea:focus ~ span,
+ .inputBox textarea:valid ~ span
+ { 
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-9px);
+    font-size: 0.9em;
+    padding: 0 10px ;
+    background: #1d2b3a;
+    /* border-left: 1px solid #00dfc4 ;
+    border-right: 1px solid #00dfc4 ; */
+ }
+
+ .inputBox input:focus  ,
+ .inputBox input:valid  ,
+ .inputBox textarea:focus,
+ .inputBox textarea:valid 
+ { 
+    border: 1px solid #00dfc4 ;
+ }
+
+ 
 
 
-
-.bbs .btn-container {
-    text-align: right;
-}
-
-.bbs .btn {
+ .btn {
     
     text-decoration: none;
     display: inline-block;
@@ -74,6 +87,7 @@ body{
     border-radius: 5px;
     width: auto;
 }
-.bbs .btn:hover{
-    background-color: #0366d6;
+ .btn:hover{
+    background-color: #00dfc5a5;
+    
 }
