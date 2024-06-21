@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金魚都能懂的網頁設計入門-第二十天 - RWD 入門</title>
+    <style type="text/css">
+        .{
+            margin: 0;
+            padding: 0;
+            list-style none;
+        }
+        /* 以手機行動裝置為優先,手機狀況為滿版 */
+        .wrap{
+            width: 100%;
+            /* 因為mac筆電最大瑩幕為 1440px 左右，基本建議 可以被 2 3 4 5 6整除(2 3 4 5 6 欄）*/
+             max-width: 1400px; 
+            /* (業界1170px 1200px都有)    */
+            margin: auto;   /* 置中 */
+        }
+        .item{
+            background-color: #ffa;
+            /* 設定距離 */
+            margin: 0px 10px 20px; /* 上 左右  下 */
+            padding: 10px;
+           
+        }
+        /* 再來處理桌機 , 用 media query 來做*/
+        /* iPad 為優先 768px */
+        @media screen and (min-width: 768px){
+            /* 平板以橫排顯示 */
+            .wrap{
+                display: flex;
+                
+            }
+            /* 還有item寬度要設定一下，不然會出現大小邊 */
+            .item{
+                width: 33.333333%;
+            }
+
+        }
+        /* 用開發人員工具檢查各個尺寸是否正常 */
+    </style>
+
+
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate quibusdam animi quis molestias laudantium consequatur cum fugiat! Eum, accusantium porro!
+            Voluptate quibusdam animi quis molestias laudantium consequatur cum fugiat! Eum, accusantium porro!
+            </p>
+        </div>
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate quibusdam animi quis molestias laudantium consequatur cum fugiat! Eum, accusantium porro!</p>
+        </div>
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate quibusdam animi quis molestias laudantium consequatur cum fugiat! Eum, accusantium porro!</p>
+        </div>
+    </div>
+</body>
+</html>
