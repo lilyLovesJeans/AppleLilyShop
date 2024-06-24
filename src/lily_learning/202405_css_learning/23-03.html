@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 金魚都能懂的網頁設計入門-第二十一天 - RWD 試排版</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+        #menu_control{
+            position: absolute;
+            z-index: -2; 
+            /*讓check box 到後面去不要出現在畫面上  */
+            opacity: 0;/*確保check box 永遠消失  */
+        } 
+        .header{
+            height: 50px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .logo{
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        .logo a{
+            display: block;
+            height: 40px;
+        }
+        .logo img{
+            display:block;
+        }
+        .menu_btn{
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        .menu_btn span{
+            /* 選單文字不要秀出來，把文字消失 */
+            opacity: 0; 
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+        }
+        /* 第四做漢堡圖裹面一根一根的部份，做用偽元素來製作 */
+        .menu_btn::before{
+            content: "";
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            /* 36＋2+2 = 40px */
+            background-color: #aaa;
+            /* 放置正中間 ,垂直置中top:0 bottom:0  margin: auto*/
+            top:0;
+            bottom: 0;
+            margin: auto; 
+            /* 利用 box-shadow來製作另外二根 */
+            box-shadow: 0px 8px 0px #aaa
+           ,0px -8px 0px #aaa;
+        }
+        /* 第五做處理選單的部份,通常會在手機上出現，然後是滿版高度 */
+   
+        /* 第六 處理選單超連結的部份 */
+        nav a{
+            display: block; /* 縰向排列 */
+            
+            text-decoration: none;
+            color: #a6e22c;
+            padding: 10px 20px;
+            border-bottom: 1px solid #a6e22c;
+
+        }
+        /* 選到後面的header 再選到nav */
+        #menu_control:checked ~ .header nav{
+            left: 0;
+        }
+
+       /* 第十 也可以攥寫單獨給手機使用的media query */
+       @media screen and (max-width: 767px){
+            nav{
+                width: 80%;
+                
+                /*height: 100vh;  view port height視窗高 */
+                /* 高度用計算機來算, 用 100vh,扣掉header 的50px */
+                height: calc(100vh - 50px);
+                background-color: #2a2923;
+                /* 設定絕對定位，定在header裹正 */
+                position: absolute;
+                top: 50px;
+                /* left:0; */
+                /* 第七 先讓選單離闕視窗standby，設定left: -100% */
+                left: -100%;
+                transition: .5s ;
+
+            }
+
+        }
+
+        /* 第八 處理桌機的部份，使用media query */
+        @media screen and (min-width:768px) {
+            .menu_btn{ display:none;}
+            .header{
+                display: flex;
+                justify-content: space-between; 
+                /* 讓桌機的選單靠右 */
+                background-color: #2a2923;
+                /* 垂直置中 */
+                align-items: center;
+            }
+            nav{
+                position: relative; 
+                /* 做回相對定位 */
+                left: 0;
+                /* 不要位移 */
+                display: flex;
+                width: auto;
+                height: auto;
+                /* 因為折行 ，沒有在nav上，跑到下面了，所以 top 改回0 */
+                top:0;
+                background-color: transparent;
+                border-bottom: none;
+                
+            }
+        }
+
+
+
+
+
+
+        /* 因為圖片垂直對齊方式是base-line,所以圖片下面會有一點點空白，解決方式就是： 把圖片先抓出來單獨設定垂直對齊方式，可以是bottom top middle , 就是不要 base-line ,這樣圖片就會黏緊緊*/
+        
+        img{
+            vertical-align: bottom;
+        }
+        .banner img{
+            width: 100%;
+        }
+        .title{
+            margin: 0 0px 20px;
+            padding: 30px 10px;
+            background-color: #ccc;
+        }
+        .title h2{
+            text-align: center;
+            font-size: 46px;
+        }
+        .title p{
+            font-size: 22px;
+            text-align: center;
+        }
+        .item{
+            margin: 0 10px 40px;
+        }
+        .item h3{
+            font-size: 24px;
+            text-align: center;
+        }
+        .item .pic img{
+            width: 100%;
+        }
+        .footer{
+            background-color: #333;
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0px;
+        }
+        .item-group{
+            width: 100%;
+            /* 為了桌機版設定最大寬度 */
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .service{
+            margin: 60px 0px;
+            background-color:#ffa ;
+        }
+
+        /* 以上為手機版設定
+        再來用 media query 來設定桌機版
+        */
+        /* 先設定平版  768px */
+        @media screen and (min-width: 768px){
+            .item-group{
+        display: flex;}
+            .service .item{
+                display: flex;
+            }
+            .service .item .pic,
+            .service .item .text{
+                width:50%;
+                margin: 0;
+            }
+            /* 手機版的 margin ok 但到桌機版下方會多出來，所以要單獨設定 margin */
+            .service .item{margin: 0px;}
+            
+            .service .item .text{
+                /* 設定右邊文字區土戈心一為橫排，文字置中 先以column 顯示，才能置中flex-direction: column; */
+                display: flex;
+                padding: 0px 20px;
+                flex-direction: column;
+                justify-content: center;
+                /* 因為整個service 有點偏左歪去，所以要設定 box-size: border-box */
+                box-sizing: border-box;
+
+            }
+
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- 第九 把選單放到前一天製作的RWD html -->
+    <input type="checkbox" id="menu_control">
+     <div class="header">
+        <!-- logo 圖片不用做太大 ，大約60*40 -->
+        <h1 class="logo">
+            <!-- 通常logo 會有個超連結 -->
+            <a href="#">
+                <img src="https://picsum.photos/60/40/?random=3">  
+            </a>
+        </h1>
+        <!-- 第三 在手機上面要顯示漢堡選單 ，製作過程： 先使用一個 label 裹面用 for 屬性，包一個span放 文字 ,  label 是跟表單有關係，可以用來控制input  , input 放在前方，使用checkbox類型 -->
+        <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+        </label>
+            
+        <!-- 第二做選單 a[#]{link} -->
+        <nav>
+            <a href="#">link</a><a href="#">link</a><a href="#">link</a><a href="#">link</a><a href="#">link</a><a href="#">link</a>
+        </nav>
+
+    </div>
+
+
+
+
+
+    <!-- 1. 先做滿版區塊，banner裹面放一個圖片 -->
+    <div class="banner">
+        <img src="https://picsum.photos/1400/500/?random=3"> 
+    </div>
+    <!-- 2. 再來做一個about 區塊 ，會是固定寬，會主標題，底下有幾個欄-->
+    <div class="about">
+        <!-- 設計一個wrap 裹面放一個標題區，一個內容欄位區,這樣可以利用 wrap 做固定寬，接著利用item-group 去設定所有的item ，同時也把大標題與內容做區隔 -->
+        <div class="wrap"> 
+            <div class="title">
+                <h2>關於我們</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A numquam maxime et debitis, eveniet fugit molestiae illum at facilis incidunt?</p>
+            </div>
+            <!-- 三欄區埤，裹面有 假圖 h3標題 簡單內文 -->
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=3">
+                    </div>
+                    <div class="text">
+
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore dignissimos nam, iusto possimus quaerat assumenda delectus vel quos quasi.</p>  
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=4">
+                    </div>
+                    <div class="text">
+
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore dignissimos nam, iusto possimus quaerat assumenda delectus vel quos quasi.</p>  
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=5">
+                    </div>
+                    <div class="text">
+
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore dignissimos nam, iusto possimus quaerat assumenda delectus vel quos quasi.</p>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="service">
+        <div class="wrap">
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=5">
+                    </div>
+                    <div class="text">
+
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore dignissimos nam, iusto possimus quaerat assumenda delectus vel quos quasi.</p>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about">
+        <!-- 設計一個wrap 裹面放一個標題區，一個內容欄位區,這樣可以利用 wrap 做固定寬，接著利用item-group 去設定所有的item ，同時也把大標題與內容做區隔 -->
+        <div class="wrap"> 
+            <div class="title">
+                <h2>關於我們</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A numquam maxime et debitis, eveniet fugit molestiae illum at facilis incidunt?</p>
+            </div>
+            <!-- 四欄區埤，裹面有 假圖 h3標題 簡單內文 -->
+            <div class="item-group">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=31">
+                    </div>
+                    <div class="text">
+
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore dignissimos nam, iusto possimus quaerat assumenda delectus vel quos quasi.</p>  
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=41">
+                    </div>
+                    <div class="text">
+
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore dignissimos nam, iusto possimus quaerat assumenda delectus vel quos quasi.</p>  
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=51">
+                    </div>
+                    <div class="text">
+
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore dignissimos nam, iusto possimus quaerat assumenda delectus vel quos quasi.</p>  
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=61">
+                    </div>
+                    <div class="text">
+
+                        <h3>title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore dignissimos nam, iusto possimus quaerat assumenda delectus vel quos quasi.</p>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        &copy; copyright 2018 by lily
+    </div>
+
+</body>
+</html>

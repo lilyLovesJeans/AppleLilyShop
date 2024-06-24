@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金魚都能懂的網頁設計入門-第二十二天 - RWD選單製作</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0 ;
+            list-style: none;
+        }
+        #menu_control{
+            position: absolute;
+            z-index: -2; 
+            /*讓check box 到後面去不要出現在畫面上  */
+            opacity: 0;/*確保check box 永遠消失  */
+        } 
+        .header{
+            height: 50px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .logo{
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        .logo a{
+            display: block;
+            height: 40px;
+        }
+        .logo img{
+            display:block;
+        }
+        .menu_btn{
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        .menu_btn span{
+            /* 選單文字不要秀出來，把文字消失 */
+            opacity: 0; 
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+        }
+        /* 第四做漢堡圖裹面一根一根的部份，做用偽元素來製作 */
+        .menu_btn::before{
+            content: "";
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            /* 36＋2+2 = 40px */
+            background-color: #aaa;
+            /* 放置正中間 ,垂直置中top:0 bottom:0  margin: auto*/
+            top:0;
+            bottom: 0;
+            margin: auto; 
+            /* 利用 box-shadow來製作另外二根 */
+            box-shadow: 0px 8px 0px #aaa
+           ,0px -8px 0px #aaa;
+        }
+        /* 第五做處理選單的部份,通常會在手機上出現，然後是滿版高度 */
+        nav{
+            width: 80%;
+            /*height: 100vh;  view port height視窗高 */
+            /* 高度用計算機來算, 用 100vh,扣掉header 的50px */
+            height: calc(100vh - 50px);
+            background-color: #2a2923;
+            /* 設定絕對定位，定在header裹正 */
+            position: absolute;
+            top: 50px;
+            /* left:0; */
+            /* 第七 先讓選單離闕視窗standby，設定left: -100% */
+            left: -100%;
+            transition: .5s ;
+        }
+        /* 第六 處理選單超連結的部份 */
+        nav a{
+            display: block; /* 縰向排列 */
+            
+            text-decoration: none;
+            color: #a6e22c;
+            padding: 10px 20px;
+            border-bottom: 1px solid #a6e22c;
+
+        }
+        /* 選到後面的header 再選到nav */
+        #menu_control:checked ~ .header nav{
+            left: 0;
+        }
+        /* 第八 處理桌機的部份，使用media query */
+        @media screen and (min-width:768px) {
+            .menu_btn{ display:none;}
+            .header{
+                display: flex;
+                justify-content: space-between; 
+                /* 讓桌機的選單靠右 */
+                background-color: #2a2923;
+                /* 垂直置中 */
+                align-items: center;
+            }
+            nav{
+                position: relative; 
+                /* 做回相對定位 */
+                left: 0;
+                /* 不要位移 */
+                display: flex;
+                width: auto;
+                height: auto;
+                /* 因為折行 ，沒有在nav上，跑到下面了，所以 top 改回0 */
+                top:0;
+                background-color: transparent;
+                border-bottom: none;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu_control">
+     <div class="header">
+        <!-- logo 圖片不用做太大 ，大約60*40 -->
+        <h1 class="logo">
+            <!-- 通常logo 會有個超連結 -->
+            <a href="#">
+                <img src="https://picsum.photos/60/40/?random=3">  
+            </a>
+        </h1>
+        <!-- 第三 在手機上面要顯示漢堡選單 ，製作過程： 先使用一個 label 裹面用 for 屬性，包一個span放 文字 ,  label 是跟表單有關係，可以用來控制input  , input 放在前方，使用checkbox類型 -->
+        <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+        </label>
+            
+        <!-- 第二做選單 a[#]{link} -->
+        <nav>
+            <a href="#">link</a><a href="#">link</a><a href="#">link</a><a href="#">link</a><a href="#">link</a><a href="#">link</a>
+        </nav>
+
+    </div>
+</body>
+</html>
