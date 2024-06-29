@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>金魚都能懂的網頁設計入門-第二十三天 - Bootstrap 入門</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <style type="text/css">
+    .aa{
+        /* 淺粉色 */
+        background-color: #faa ; 
+    }
+    .bb{
+        /* 淺紫色 */
+        background-color: #aaf ;
+    }
+    .cc{
+        /* 淺綠色 */
+        background-color: #afa ;
+    }
+  </style>
+  <body>
+
+
+    <!-- 1. 做滿版寬 ： container-fluid 
+    固定寬： container
+    -->
+
+    <!-- <div class="container-fluid">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, dolores odit voluptatum necessitatibus rerum corrupti quisquam omnis earum deserunt quis sint blanditiis quia, fugit architecto quas numquam explicabo optio animi?
+    </div> -->
+
+    <!-- 2. 要建構多欄的版面，使用 row 及col 的class-->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col aa">A  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid eaque reprehenderit facilis ut, tempore aperiam eligendi earum consequatur exercitationem.</div>
+            <div class="col bb">B Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid eaque reprehenderit facilis ut, tempore aperiam eligendi earum consequatur exercitationem.</div>
+        </div>
+    </div> -->
+
+    <!-- 3. RWD 效果, 設定 col col-sm col-md col-lg col-xl 由小至大 -->
+
+    <!-- RWD 效果：bootstrap把裝置分成五個尺寸 ,
+    手機 直 .col-佔欄數 「預設值」
+    手機 横 .col-sm-佔欄數
+    
+    平板 直 .col-md-佔欄數
+    平板 橫 .col-lg-佔欄數
+    
+    桌機   .col-xl-佔欄數
+    
+    bootstrap 把版面切成12等份,就是佔欄數 -->
+
+    <div class="container">
+        <div class="row">
+            <!-- 手機直向 aa bb cc都是12 col-12 , 手機横向 aa col-sm-12 bb及cc col-sm-6 -->
+            <div class="col-12 col-sm-12 aa">A  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid eaque reprehenderit facilis ut, tempore aperiam eligendi earum consequatur exercitationem.
+            </div>
+
+            <div class="col-12 col-sm-6 bb">B Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid eaque reprehenderit facilis ut, tempore aperiam eligendi earum consequatur exercitationem.
+            </div>
+
+
+            <div class="col-12 col-sm-6 cc">C Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid eaque reprehenderit facilis ut, tempore aperiam eligendi earum consequatur exercitationem.
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
