@@ -1,278 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>金魚都能懂的網頁設計入門-第二十四天 - Bootstrap 組件入門</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style type="text/css">
-        .banner{
-            color: #fff;
-            background: url("https://picsum.photos/1920/400/?random=3") no-repeat center center / cover;
-        }
-        .my_path{
-          background-color: #ccc;;
-        }
-        .my_path .breadcrumb{
-            background-color: transparent;
-        }
-        .main-footer{
-            padding: 20px 0px;
-            background-color: #000;
-            color: #fff;
-        }
-    
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>金魚都能懂的網頁設計入門-第二十六天 - JQuery事件</title>
+  <style type="text/css">
+    .box-a{
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background-color: #aaa;
+    }
+    .box-b{
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background-color: #faa;
+    }
+    .content{
+      display: none;
+    }
+    .product-title{
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- 3. 做二個 box 測試程式,box-a是開關 ,box-b 會因box-a 點選之後而消失或出現 -->
+  <div class="box-a">box-a</div>
+  <div class="box-b">box-b</div>
+
+<!-- 7.做一個手風琴的效果,例如側邊欄有一個選單，底下會展開子選單 -->
+<div class="product-title">產品介紹</div>
+<div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora accusamus ducimus modi animi aspernatur explicabo repellat odit, libero suscipit nisi reiciendis quia aliquid earum autem ipsam nemo distinctio eaque consequuntur.</div>
 
 
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <!-- 13. bootstrap 對超連控制方式 ,把  data-bs-target的內容貼到 href="" ，data-bs-toggle 補到屬性裹面 -->
-                <!-- 14. 把link 的超連結改成登入 -->
-                <a class="nav-link active" aria-current="page" href="#exampleModal" data-bs-toggle="modal"  >登入</a>
-              </li>
 
-            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            登入
-            </button> -->
-            
-            <!-- 13. bootstrap 對超連控制方式 ,把 button的 data-bs-target的內容貼到 href="" ，data-bs-toggle 補到屬性裹面 -->
-            <!-- <a href="#exampleModal" data-bs-toggle="modal"  >登入</a> -->
-
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-
-    <!-- 2. 大的banner 背景圖  -->
-   <!-- bg-light is background color & p-5 is padding -->
-    <!-- <div class="banner container-fluid text-sm-center p-5 bg-light"> 
-     
-        <h1 class="display-4">Banner</h1>
-        <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, voluptate.</p>
-    </div> -->
-    <!-- 10. 將banner 改成 carousel 幻燈片 -->
-    <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://picsum.photos/1200/300/?random=6" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://picsum.photos/1200/300/?random=7" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://picsum.photos/1200/300/?random=8" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-
-    <div class="my_path">
-        <div class="container">
-        <!-- 3. 麵包屑 path Breadcrumb-->
-        
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
-                </ol>
-            </nav>
-        </div>
-
-    </div>
-
-
-    <!--  4. 建構 2欄版面 -->
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-3">
-                <!-- 5. 左邊要有一個直式選單 list group , 找有超連結的部份-->
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                      The current link item
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-                    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-                    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-                    <a class="list-group-item list-group-item-action disabled" aria-disabled="true">A disabled link item</a>
-                  </div>
-            </div>
-
-            <div class="col-12 col-md-9">
-                <!-- 6. 右邊要有個簡單的標題，自己寫 -->
-                <h1>title</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ducimus nesciunt, omnis vero numquam eum beatae neque dolores optio quisquam dolorem iusto dolore quo, quod voluptatem facilis, quaerat repudiandae id?</p>
-                <div class="row">
-
-                    <div class="col-12 col-md-3">
-                        <div class="item">
-                            <img src="https://picsum.photos/300/200/?random=31" class="img-fluid">  
-                        </div>
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, veniam.</p>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="item">
-                            <img src="https://picsum.photos/300/200/?random=32" class="img-fluid">  
-                        </div>
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, veniam.</p>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="item">
-                            <img src="https://picsum.photos/300/200/?random=33" class="img-fluid">  
-                        </div>
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, veniam.</p>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="item">
-                            <img src="https://picsum.photos/300/200/?random=34" class="img-fluid">  
-                        </div>
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, veniam.</p>
-                    </div>
-
-                    <div class="col-12 col-md-3">
-                        <div class="item">
-                            <img src="https://picsum.photos/300/200/?random=34" class="img-fluid">  
-                        </div>
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, veniam.</p>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="item">
-                            <img src="https://picsum.photos/300/200/?random=35" class="img-fluid">  
-                        </div>
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, veniam.</p>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="item">
-                            <img src="https://picsum.photos/300/200/?random=36" class="img-fluid">  
-                        </div>
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, veniam.</p>
-                    </div>
-                    <div class="col-12 col-md-3">
-                        <div class="item">
-                            <img src="https://picsum.photos/300/200/?random=37" class="img-fluid">  
-                        </div>
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, veniam.</p>
-                    </div>
-
-                </div>
-            </div>
-
-          
-        </div>
-        <!-- 7. 底下要有一個換頁的方式 ，找pagination-->
-        <!-- 然後希望pagination 可以置中，先用檢查看看，物件是用什麼方式顯示 display: ? 檢查之後，發現是用 flex , 所以置中方式就用justify-content-center 這個 class-->
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-    </div>
-    <!-- 8. 還需要一個 footer -->
-    <div class="container-fluid text-center main-footer">
-        &copy copyright by Lily
-    </div>
-
-<!-- 9.補充說明 ，像7.的卡片方式設計, bootstrap 已有 card component 
-上面的banner 可以改成幻燈片 carousel
--->
-
-<!-- 11. 補充說明： 登入區 modal -->
-<!-- 先去 copy一個 button 可以控制 modal 
-data-toggle 為你要控制的模組: class= modal，
-data-target 指的是 ID id=exampleModal
--->
-
-<!-- 12. 然後把 button 改為nav 的選單 超連結 -->
-
-<!-- 下列這段是 modal -->
-
-<!-- Button trigger modal -->
-
+  <!-- 1.先把 jquery load 進來 -->
+  <script src="./jquery.min.js"></script>
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">登入</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          用戶註冊
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- 2. 先呼叫 ready 方法，準備做事 -->
+  <script type="text/JavaScript">
+    //ready 是jquery的一個方法
+    $(document).ready(
+      function(){
+        
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+
+        //... 做事的位置
+        // 4. 當.box-a  click要做事情, 要在裹面寫匿名函式function
+        // 6. 試看看 dobule click 
+        // $('.box-a').dblclick(
+        $('.box-a').click(
+          function(){
+            // 當選到 box-a ，則 box-b藏起來
+            // $('.box-b').hide();
+            // box-a  是開關，box-b 會消失及出現
+            // $('.box-b').toggle();
+            // 5. 可以用開發人員工具，檢查看看 .box-b 發生什麼事, 看到 style display: none 出現及消失
+          
+            $('.box-b').toggle();
+          }
+        )
+
+
+        // 7.手風琴的效果
+        $('.product-title').click(
+          function(){
+            $('.content').toggle();
+          }
+        )
+
+
+      })
+ 
+    
+  </script>
+</body>
 </html>

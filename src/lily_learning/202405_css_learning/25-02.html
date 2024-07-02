@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>金魚都能懂的網頁設計入門-第二十六天 - JQuery事件</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none
+    }
+    /* 設定蓋版廣告 */
+    .full-screen{
+      position: fixed;
+      
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%; 
+      z-index: 10;
+      background: rgba(0,0,0,.5);
+      /* 垂直置中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .full-screen .text{
+      width: 90%;
+      /* 用 max-width不會破版*/
+      max-width: 500px;
+      max-height: 80%;
+      background: #fff;
+      padding: 20px;
+      position: relative;
+    }
+    /* 關閉鈕通常會露出去 */
+    .full-screen .btn-close{
+      position: absolute;
+      /* 下列三行是垂直置中的技巧 */
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background-color:#000 ;
+      color: #fff;
+      text-decoration: none;
+      top: -15px;
+      right: -15px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <!-- 做一個蓋版廣告 -->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam itaque tempora aut tenetur! Aliquam rerum aut temporibus exercitationem, provident rem. Libero asperiores laboriosam culpa maiores nostrum magni at eaque officia.</p>
+    <p>Sapiente doloribus nisi quam, dicta aliquid cupiditate ex explicabo eius ad. Rerum, accusamus aliquid alias quasi in ratione corporis repellendus minus repudiandae maiores perspiciatis hic consequuntur sint eius recusandae voluptatem?</p>
+    <p>Quas commodi, laudantium est illum debitis fugit voluptatem culpa natus explicabo fugiat beatae laboriosam inventore, odit architecto, hic eos enim. Impedit officia ducimus ratione obcaecati. Provident, quod. Autem, nihil. Debitis.</p>
+    <p>Maiores illo voluptatem adipisci earum consectetur! Odio, cumque. Veritatis, ea. Totam reiciendis, nam tempore aperiam praesentium, adipisci doloremque possimus deserunt inventore fuga officiis maxime velit nesciunt necessitatibus fugit assumenda cum?</p>
+    <p>Nesciunt dignissimos accusantium quos minus cum optio corrupti ex molestiae porro, veniam iure. Illum molestias error eveniet architecto asperiores accusamus in, soluta atque sequi, eos ipsa. Quia molestias explicabo laudantium.</p>
+    <p>Delectus, necessitatibus odit. Perspiciatis, iusto accusamus ratione magnam nam ea eius similique nisi commodi, at architecto odio exercitationem! Ipsum quisquam cupiditate consequuntur accusantium dolore quasi voluptas porro consequatur atque commodi!</p>
+    <p>Et, repellat beatae. Provident nostrum adipisci obcaecati repellendus id eos expedita, in repellat iusto quos, tempore aperiam non. Ab autem pariatur voluptate tempora quo aperiam neque eos hic! Impedit, dolorum.</p>
+    <p>Accusamus sit, laborum aspernatur odio debitis facilis. Hic adipisci ipsam tenetur reprehenderit fugit! Provident dicta minus explicabo deserunt odio exercitationem dolores animi distinctio, sequi ex! Omnis est amet incidunt quaerat.</p>
+    <p>At, libero impedit. Dicta dolore minima veniam accusamus saepe quisquam nostrum, esse ex rerum adipisci quia nihil numquam? Deleniti odit quisquam maiores id laudantium repudiandae perspiciatis assumenda explicabo aliquam magnam.</p>
+    <p>Expedita doloribus rerum natus, eos consectetur molestias nobis ut quasi. Quis fugiat corporis quod vero sit pariatur optio quae exercitationem non, deleniti atque tempora voluptas nobis esse vitae, quidem hic.</p>
+    <p>Aliquid nihil amet ea, suscipit rem esse, deserunt dicta quia ipsa in, dolore placeat unde cupiditate at mollitia? Iure ad deleniti odio recusandae in officia libero saepe nostrum incidunt commodi?</p>
+    <p>Ad tempora distinctio accusantium, iste aperiam repellendus temporibus dignissimos inventore quam dolores culpa iure, fugit quasi ducimus sint dicta quibusdam delectus, praesentium debitis omnis provident magni fugiat magnam. Ipsam, odit.</p>
+    <p>Aspernatur at est, officiis nam odit, animi sequi minima nisi assumenda officia iusto quisquam similique saepe? Recusandae quisquam cupiditate quas, adipisci earum in dignissimos, omnis, aliquam numquam porro corrupti itaque!</p>
+    <p>Fugit beatae voluptas dignissimos itaque, molestias natus eius cupiditate quod, doloremque architecto mollitia eos facere harum qui maiores vitae sunt repudiandae hic velit ipsa, nisi eligendi aspernatur? Distinctio, repudiandae voluptatum.</p>
+    <p>Omnis aliquam autem suscipit aperiam labore odit magni harum inventore voluptatum perspiciatis natus dicta nam rerum dolorum eveniet tenetur ad, debitis nulla temporibus quidem pariatur, excepturi assumenda quod. Dolor, doloremque.</p>
+    <p>Quod cum iste, praesentium dolore delectus nobis tenetur debitis aliquid architecto quos, dolorem eligendi eum totam voluptatibus id doloribus magnam veritatis a? Quia reiciendis perferendis id placeat eum at velit.</p>
+    <p>Odit animi quis blanditiis commodi illum laborum id sapiente dolore sequi in, harum fugit amet culpa laboriosam adipisci ipsa necessitatibus, aliquid, corrupti obcaecati ducimus. Non sunt inventore sit perspiciatis delectus.</p>
+    <p>Nam doloremque pariatur illo ducimus, possimus quis quo nesciunt, perferendis expedita iure, adipisci corporis eligendi ipsa fuga aliquid quisquam tempore impedit soluta. Nisi quibusdam ut illo saepe quidem explicabo. Ullam?</p>
+    <p>Deleniti iste officiis voluptate? Culpa aspernatur saepe illum, accusantium eligendi ex qui! Soluta amet expedita commodi itaque quibusdam mollitia quia magni provident laboriosam vel. Rerum nam facere perspiciatis iure veniam.</p>
+    <p>Laboriosam voluptatum reiciendis cum aut totam inventore animi id quas deleniti aperiam in laudantium sint necessitatibus nulla, quod fuga error pariatur expedita velit ex temporibus, voluptate quos, nam modi? Ipsam.</p>
+    <p>Eligendi iusto hic maiores, molestias ex fugit. Recusandae placeat maxime fugiat a. Voluptates tempora consequatur, fugit quae vel aperiam repudiandae quis explicabo laborum veniam, culpa tenetur adipisci ipsum. Corrupti, odio!</p>
+    <p>Atque saepe sit dignissimos. Quasi quisquam repudiandae fugit esse. Sit asperiores ratione eos perferendis a neque eius facilis cupiditate, non at optio officia modi sequi voluptatem provident ex fugit ea?</p>
+    <p>Tenetur velit reiciendis recusandae est iusto? Quidem laudantium aperiam ad vel in. Minus sequi explicabo ad vero esse, nobis, praesentium hic aut ullam suscipit reprehenderit omnis quis dolore temporibus accusantium?</p>
+    <p>Laborum sint nesciunt numquam recusandae nobis neque molestias blanditiis iure. Neque nihil beatae similique magnam omnis, eius alias optio, ducimus iure quis, voluptate sapiente vitae quidem animi facilis minima culpa?</p>
+    <p>Et, totam! Temporibus at repellat amet nihil nisi perferendis possimus, voluptates beatae voluptas tempore totam quidem veniam, laborum esse officia voluptatem quisquam ut id voluptate nulla distinctio quaerat? Officiis, ipsa?</p>
+    <p>Hic quia, ut beatae facere culpa voluptates illum, quos voluptas facilis ad inventore, recusandae alias aspernatur. Fugiat, corrupti modi. Voluptates alias id ducimus totam reprehenderit laborum minima distinctio natus minus.</p>
+    <p>Doloremque atque alias, quasi quae ab fuga ut, minima veritatis blanditiis, mollitia nemo? Nihil nulla ea modi inventore accusantium debitis id laudantium necessitatibus! Blanditiis at ducimus et iure ipsam sunt.</p>
+    <p>Quaerat unde ipsam deleniti dolore? Maiores repellat eos esse dolorum nihil, fugiat officia maxime unde nesciunt. Nulla, soluta, ratione eos error optio delectus laboriosam, obcaecati velit itaque mollitia doloribus commodi.</p>
+    <p>Ad voluptatum quos quaerat iure ducimus consequuntur? Quaerat tempore fugit deleniti quidem optio expedita ullam et inventore libero eveniet placeat nihil rerum ipsam, dignissimos aut ut repudiandae. Blanditiis, magnam repellat.</p>
+    <p>Rerum officiis saepe cupiditate, fugiat accusamus distinctio minima quasi, possimus doloribus porro amet? Consequuntur facilis reiciendis, placeat provident deserunt ipsam aliquam veritatis at. Omnis nihil voluptas numquam dolores ipsa vitae?</p>
+
+    <!-- 蓋版廣告的區塊 -->
+    <div class="full-screen">
+      <div class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus rem deserunt consectetur optio ex, sunt fugit inventore culpa esse vel asperiores cupiditate commodi ullam voluptatum magnam maxime, nobis harum ipsam!
+        <!-- 希望有一個關閉的按鈕 -->
+        <a href="#" class="btn-close">X</a> 
+      </div>
+    </div>
+
+
+  <!-- 先把 jquery load 進來 -->
+  <script src="./jquery.min.js"></script>
+  
+  <!--  先呼叫 ready 方法，準備做事 -->
+  <script type="text/JavaScript">
+    //ready 是jquery的一個方法
+    $(document).ready(
+      function(){
+        // btn-close點到，full-screen關閉
+        $('.btn-close').click(
+          function(){
+            $('.full-screen').hide();
+          }
+        )
+
+
+
+      })
+ 
+    
+  </script>
+</body>
+</html>
