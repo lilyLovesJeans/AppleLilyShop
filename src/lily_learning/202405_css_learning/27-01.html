@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金魚都能懂的網頁設計入門-第二十七天 - CSS控制</title>
+
+    <style type="text/css">
+        *{
+          margin: 0;
+          padding: 0;
+          list-style: none
+        }
+        .controller{
+            display:block;
+            padding: 6px 10px;
+            background-color: #000;
+            color: #fff;
+            width: 300px;
+            text-decoration: none;
+        }
+        .text{
+            width: 280px;
+            padding: 20px;
+            background-color: #ccc;
+
+        }
+        .text.x{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="#" class="controller">關/關</a>
+    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis adipisci facere excepturi explicabo iste tempora id qui odio dignissimos, vel nemo molestias at omnis enim ullam praesentium, voluptates voluptatum recusandae!</div>
+
+
+    <!-- 先把 jquery load 進來 -->
+  <script src="./jquery.min.js"></script>
+
+  <script type="text/JavaScript">
+    $(document).ready(
+        function(){
+
+
+// 可以拿來做 RWD 選單功能
+            $('.controller').click(
+                function(){
+                    $('.text').slideToggle('x');
+                }
+            )
+
+            // $('.controller').click(
+            //     function(){
+            //         $('.text').fadeToggle();
+            //     }
+            // )
+
+
+
+
+
+
+        }
+
+
+    )
+  </script>
+
+</body>
+</html>
