@@ -1,3 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    background: linear-gradient(to right, #f0f0f0, #f5f5f5, #fafafa, hsl(0, 0%, 99%), #ffffff);;
+}
 .container {
     width: 100%;
     max-width: 800px;
@@ -7,4 +15,25 @@
 .chart {
     position: relative;
     height: 400px; 
+    margin-bottom: 200px;
+}
+
+.chart-title {
+    /* color: #18181deb; */
+    color: #3B6F9C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 20px  0;
+}
+
+.chart-title  img {
+    width: 40px; 
+    height: 30px;
+}
+
+.chart-title-bar img,.chart-title-pie img{
+    width: 50px;
+    margin-right: 5px;
 }
