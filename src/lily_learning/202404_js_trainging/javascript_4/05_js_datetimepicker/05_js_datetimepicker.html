@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 系列四：第5課 ── xdan/datetimepicker 套件</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" href="./05_js_datetimepicker.css">
+</head>
+<body>
+    <div class="container">
+        <div class="checkin_date">
+            <p>Days for booking</p>
+            
+            <input id="date_timepicker_start" type="text" placeholder="From">
+            <span>⟶</span>
+            <input id="date_timepicker_end" type="text" placeholder="To">
+        </div>
+        <div class="selected_date">
+            <p class="display_dates" id="display_dates">
+                <span>Check in: </span>
+                <span id="from"></span>
+                <span>Check out: </span>
+                <span id="to"></span>
+                <span> Total:</span>
+                <span id="days"></span>
+                <!-- <span> Days  </span> -->
+                <span id="nights"></span>
+                <span> Nights</span>
+            </p>
+        </div>
+        <div class="error_msg">
+            Please enter the current date.
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <script src="./05_js_datetimepicker.js"></script>
+</body>
+</html>
