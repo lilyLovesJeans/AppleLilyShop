@@ -1,0 +1,60 @@
+body{
+    background-color: #eee;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.container{
+    position: relative;
+}
+
+.get-content{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: #ccc;
+    background-color: rgb(26, 54, 90);
+    margin: 10px 10px 0 0;
+    right: 0; 
+}
+.get-content:hover{
+    cursor: pointer;
+    background-color: rgba(232, 61, 124, 0.816);
+    color: #fff;
+}
+/* 不要顯示 upgrade 的按鈕 */
+.tox-promotion{
+    display: none !important;
+}
+/* #display-content{
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    background-color: #aaa;
+    border: 1px solid hotpink;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 666;
+} */
+  
+#display-content {
+    display: none;
+    width: 800px;
+    height: 300px;
+    background-color: #aaa;
+    border: 1px solid hotpink;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 666;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+}

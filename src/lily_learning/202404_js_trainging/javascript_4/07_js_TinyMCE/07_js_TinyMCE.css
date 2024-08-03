@@ -1,0 +1,67 @@
+body {
+    background-color: #eee;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.get-content {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: #ccc;
+    background-color: rgb(26, 54, 90);
+    margin: 10px 50px 0 0;
+    right: 0;
+}
+
+.get-content:hover {
+    cursor: pointer;
+    background-color: rgba(232, 61, 124, 0.816);
+    color: #fff;
+}
+
+/* Hide the upgrade button */
+.tox-promotion {
+    display: none !important;
+}
+
+#display-content {
+    display: none;
+    width: 800px;
+    height: 300px;
+    background-color: #eee;
+    border: 1px solid #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 666;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.close-content {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: none;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
