@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    border:0;
+    list-style: none;
+}
+body {
+    background-image: url('https://i.imgur.com/B7wsgw4.jpeg');
+    background-size: cover; 
+    background-position: center; /* 圖片居中顯示 */
+    background-repeat: no-repeat; /* 不重複圖片 */
+}
+.container{
+    
+    position: relative;
+    height: 100vh;
+    background-color: rgba(157, 17, 17, 0.09);
+}
+.img_bkg{
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.img_bkg img{
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+.alert_wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display:flex;
+    height: 100vh; 
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.alert {
+    display: none;
+    width: 600px;
+    height: 500px;
+    background-color: #202124; 
+    color: #cb3744;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #2c2f33; 
+    
+    /* 多層陰影增加立體感 */
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),  /* 輕微陰影，模糊較小 */
+        0 6px 12px rgba(0, 0, 0, 0.2), /* 中等陰影 */
+        0 12px 24px rgba(0, 0, 0, 0.3); /* 深層陰影，模糊較大 */
+
+    z-index: 3;
+}
+
+
+
+.alert_txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.8rem; 
+
+    white-space: pre-wrap; /* 保留空白和換行符 */
+}
+.btn_group{
+    display:flex;
+    justify-content: center;
+    gap: 30px;
+}
+.btn_group button{
+    font-size: 20px ;
+    padding: 5px 10px;
+    cursor:pointer;
+    border-radius: 5px;
+    transition: transform 0.1s ease; 
+}
+.btn_group :active {
+    transform: scale(0.95); /* 當按鈕被按下時縮小 5% */
+
+}
+.exit_btn:hover{
+    color:#daeaf9;
+    background-color: #11579d;
+    border:1px solid #11579d;
+
+}
+
+.yes_btn:hover{
+    color: #d9f7d9ed;
+    background-color: #079a07;    
+    border:1px solid #079a07;
+
+}
+@media (min-width: 1200px) {
+    .alert_txt {
+        line-height: 2.2rem;
+    }
+}

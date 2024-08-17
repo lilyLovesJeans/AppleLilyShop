@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test js cookie</title>
+</head>
+<body>
+    Your age: <input id="i_age" type="text">
+    <br>
+    <br>
+    Your name: <input id="i_name" type="text" >
+    <br>
+    <br>
+    <button onclick="save()">Save</button>
+    <script scr="https://github.com/js-cookie/js-cookie"></script>
+    <script>
+        function save(){
+            let age = document.querySelector('#i_age').value;
+            console.log(age);
+            let name = document.querySelector('#i_name').value;
+            console.log(name);
+        }
+    </script>
+</body>
+</html>
