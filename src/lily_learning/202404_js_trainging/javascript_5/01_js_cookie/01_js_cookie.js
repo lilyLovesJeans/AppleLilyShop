@@ -1,5 +1,8 @@
 function set_cookie() {
-    Cookies.set('yes_18', 'yes');
+    var inThreeMinutes = new Date(new Date().getTime() + 3 * 60 * 1000); //設定3分鐘expired
+    Cookies.set('yes_18', 'yes' , {
+        expires: inThreeMinutes
+    });
     $('.alert').css('display', 'none');
     $('.img_bkg img').css('display', 'block');
 }

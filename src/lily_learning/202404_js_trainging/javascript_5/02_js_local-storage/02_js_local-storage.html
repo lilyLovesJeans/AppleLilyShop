@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 系列五：第2課 ── 學會 Local Storage 相關功能</title>
+    <link rel="stylesheet" href="./02_js_local-storage.css">
+</head>
+<body>
+    <div class="bg-container">
+       
+        <div class="input_text">
+            <h1>
+                To Do List
+            </h1>
+            <div class="input_container">
+                <input type="text" id="to_do" class="to_do" placeholder="新增待辦事項...">
+                <select id="list_level"  class="list_level" >
+                    <option value="normal" selected>一般</option>
+                    <option value="important" >重要</option>
+                    <option value="urgent" >緊急</option>
+                </select>
+                <button  id ="add_list" class="add_list" onclick="addList()">+</button>
+                <button class="todo_btn export_btn" onclick="exportList('export')">匯出清單</button>
+                <button class="todo_btn save_btn" onclick="exportList('save')">儲存</button>
+
+            </div>
+
+
+        </div>
+        <div class="to_do_list">
+            <h3>待辦事項的清單</h3>
+            <div class="to_do_list_container">
+                <ul id="to_do_list_ul" class="to_do_list_ul">
+
+                </ul>
+            </div>
+        </div> 
+    </div>
+    <script src="./02_js_local-storage.js"></script>
+</body>
+</html>
