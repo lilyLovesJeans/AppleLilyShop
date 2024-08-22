@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Flip Clock Counter</title>
+    <style>
+        body {
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; */
+            background-color: #333;
+            /* font-family: 'Courier New', Courier, monospace; */
+        }
+
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .flip-container {
+            perspective: 1000px;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .flipper {
+            position: relative;
+            width: 180px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .digit {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            font-size: 80px;
+            line-height: 100px;
+            text-align: center;
+            background-color: #222;
+            border-radius: 10px;
+            transition: transform 1s, opacity 1s;
+        }
+
+        .flipper.up .digit.top {
+            animation: flip-up 1s forwards;
+        }
+
+        .flipper.up .digit.bottom {
+            animation: fade-in-up 1s forwards;
+        }
+
+        .flipper.down .digit.top {
+            animation: flip-down 1s forwards;
+        }
+
+        .flipper.down .digit.bottom {
+            animation: fade-in-down 1s forwards;
+        }
+
+        @keyframes flip-up {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fade-in-up {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes flip-down {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fade-in-down {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        button {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="counter-container">
+    <div class="flip-container">
+        <div class="flipper">
+            <div id="topDigit" class="digit top">0</div>
+            <div id="bottomDigit" class="digit bottom">1</div>
+        </div>
+    </div>
+    <button onclick="counter.plus()">+</button>
+    <button onclick="counter.minus()">-</button>
+</div>
+
+<script>
+    const counter = (() => {
+        let count_1 = 0;
+
+        const updateDisplay = (newCount, direction) => {
+            const topDigit = document.getElementById('topDigit');
+            const bottomDigit = document.getElementById('bottomDigit');
+            const flipper = document.querySelector('.flipper');
+
+            topDigit.textContent = count_1;
+            bottomDigit.textContent = newCount;
+
+            flipper.classList.remove('up', 'down');
+            flipper.classList.add(direction);
+
+            setTimeout(() => {
+                topDigit.textContent = newCount;
+                flipper.classList.remove('up', 'down');
+            }, 1000); // 这应与动画持续时间一致
+        };
+
+        const plus = () => {
+            count_1++;
+            updateDisplay(count_1, 'up');
+        };
+
+        const minus = () => {
+            count_1--;
+            updateDisplay(count_1, 'down');
+        };
+
+        return { plus, minus };
+    })();
+</script>
+
+</body>
+</html>

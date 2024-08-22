@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade-in Up Animation</title>
+    <style>
+        body {
+            background-color: #333;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: #444;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* 初始状态为透明 */
+        }
+
+        @keyframes fade-in-up {
+            0% {
+                transform: translateY(100%); /* 从下方滑入 */
+                opacity: 80%; /* 完全透明 */
+            }
+            100% {
+                transform: translateY(0); /* 到达正常位置 */
+                opacity: 1; /* 完全显示 */
+            }
+        }
+
+        /* 动画类 */
+        /* .fade-in-up {
+    animation: fade-in-up 2s 3s backwards;
+} */
+
+
+.fade-in-up {
+    animation: fade-in-up 2s 3s forwards;
+}
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <div id="animatedBox" class="box">Hello!</div>
+    <button id="animateBtn">Trigger Animation</button>
+</div>
+
+<script>
+    const animateBtn = document.getElementById('animateBtn');
+    const animatedBox = document.getElementById('animatedBox');
+
+    animateBtn.addEventListener('click', () => {
+        // 每次点击重置动画
+        animatedBox.classList.remove('fade-in-up');
+        void animatedBox.offsetWidth; // 触发重绘
+        animatedBox.classList.add('fade-in-up');
+    });
+</script>
+
+</body>
+</html>
