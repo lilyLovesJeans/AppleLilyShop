@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+#load_products_btn{
+    width: 120px;
+    height: 80px;
+    color: #ccc;
+    background-color:rgb(8, 81, 81);
+    font-size: 20px; 
+    padding: 10px; 
+    margin: 20px 30px; 
+}
+
+
+#load_products_btn:hover ,#products_lists button:hover{
+    color:rgb(8, 81, 81); 
+    background-color:rgb(156, 176, 20); 
+    cursor : pointer;  
+}
+
+
+.msg {
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    height: 30px;
+    display: none;
+    background-color: #EDCAC7;
+    color:  #902105;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+
+}
+
+.msg{
+    animation: my_message 5s;
+    opacity:0;
+}
+
+@keyframes my_message{
+    from {
+        left: 200px; opacity: 100;}
+    to{ left: 300px;
+        opacity: 0;}
+
+} 
+
+
+#load_products_btn:hover ,#products_lists button:hover{
+    color:rgb(8, 81, 81); 
+    background-color:rgb(156, 176, 20); 
+    cursor : pointer;  
+}
+
+
+#products_lists {
+    display: flex; /* Change to flex to enable horizontal layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next row if needed */
+    justify-content: space-between; /* Distribute items evenly */
+    padding: 20px; 
+} 
+
+#products_lists li {
+    width: 200px; /* Adjust width to control how many items per row */
+    margin: 10px; /* Add margin to space out items */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#products_lists span {
+    text-align: center;
+    color: rgb(100, 100, 100);
+    margin-bottom: 10px; /* Add some space below the text */
+}
+
+#products_lists button {
+    width: 100px;
+    padding: 5px;
+    margin-top: 10px; 
+    color:rgb(238, 245, 245);
+    background-color:rgb(69, 69, 68); 
+    border-radius: 5px;
+}
+
+
+#products_lists img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px; /* Add space below the image */
+}
