@@ -43,19 +43,19 @@ body {
 }
 
 .flipper.up .digit.top {
-    animation: flip-up 1s forwards;
+    animation: flip-up 2s forwards;
 }
 
 .flipper.up .digit.bottom {
-    animation: fade-in-up 1s forwards;
+    animation: fade-in-up 2s forwards;
 }
 
 .flipper.down .digit.top {
-    animation: flip-down 1s forwards;
+    animation: flip-down 2s forwards;
 }
 
 .flipper.down .digit.bottom {
-    animation: fade-in-down 1s forwards;
+    animation: fade-in-down 2s forwards;
 }
 
 @keyframes flip-up {

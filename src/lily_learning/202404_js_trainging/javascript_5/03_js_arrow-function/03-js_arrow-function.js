@@ -1,31 +1,33 @@
 const counter = (() => {
     let count_1 = 0;
 
-    const updateDisplay = (newCount, direction) => {
+   
+    const updateDisplay = (direction) => {
         const topDigit = document.getElementById('topDigit');
         const bottomDigit = document.getElementById('bottomDigit');
         const flipper = document.querySelector('.flipper');
 
         topDigit.textContent = count_1;
-        bottomDigit.textContent = newCount;
+        bottomDigit.textContent = count_1;
 
         flipper.classList.remove('up', 'down');
         flipper.classList.add(direction);
 
         setTimeout(() => {
-            topDigit.textContent = newCount;
+            topDigit.textContent = count_1;
             flipper.classList.remove('up', 'down');
-        }, 1000); // 这应与动画持续时间一致
+        }, 2000); 
+        // 这应与动画持续时间一致
     };
 
     const plus = () => {
         count_1++;
-        updateDisplay(count_1, 'up');
+        updateDisplay('up');
     };
 
     const minus = () => {
         count_1--;
-        updateDisplay(count_1, 'down');
+        updateDisplay( 'down');
     };
 
     return { plus, minus };
