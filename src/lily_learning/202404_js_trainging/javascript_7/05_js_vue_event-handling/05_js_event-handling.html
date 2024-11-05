@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 系列七：第5課 ── 學習 Vue 事件處理的寫法</title>
+    <link rel="stylesheet" href="./05_js_ event-handling.css">
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+        <div class="input_content">
+            <div class="input_group">
+                <div class="label">標題</div>
+                <input class="input_area" type="text" placeholder="標題" v-model="newNote.title">
+            </div>
+            <div class="input_group">
+                <div class="label">記事</div>
+                <textarea class="input_area" cols="50" rows="3" placeholder="新增記事" v-model="newNote.content"></textarea>
+            </div>
+            <div class="input_group">
+                <div class="label">顏色</div>
+                <select class="input_area" v-model="newNote.color">
+                    <option value="red">紅色</option>
+                    <option value="green">綠色</option>
+                    <option value="blue">藍色</option>
+                </select>
+            </div>
+            <div class="input_group">
+                <button class="create_btn" @click="addNote">新增</button>
+            </div>
+        </div>
+    
+        <div class="wrap">
+          <div v-for="(note, index) in notes" :key="index" class="note" :class="note.color">
+              <h3 class="title">
+                  {{ note.title }}
+                  <button class="delete_btn" @click="deleteNote(index)">X</button>
+              </h3>
+              <p class="content">
+                  {{ note.content }}
+              </p>
+          </div>
+      </div>
+      
+    </div>
+
+    <script src="./05_js_event-handling.js"></script>
+</body>
+</html>
