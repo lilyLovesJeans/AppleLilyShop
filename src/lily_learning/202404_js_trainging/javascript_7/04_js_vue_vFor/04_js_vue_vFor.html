@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 系列七：第4課 ── 學習 Vue 迴圈的寫法</title>
+    <link rel="stylesheet" href="./04_js_vue_vFor.css">
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+        <div class="wrap">
+            <div v-for="note in notes" class="note" :class="note.color">
+            
+                <h3 class="title">
+                  <!-- 請顯示第一個項目的標題 -->
+                  {{note.title}}
+                </h3>
+                <p class="content">
+                  <!-- 請顯示第一個項目的內容 -->
+                  {{note.content}}
+                </p>
+              </div>
+              
+<!-- <div class="note" :class="notes[1].color"> -->
+<!--     <h3 class="title"> -->
+<!--         {{ notes[1].title }} -->
+<!--     </h3> -->
+<!--     <p class="content"> -->
+<!--         {{ notes[1].content }} -->
+<!--     </p> -->
+<!-- </div> -->
+<!-- <div class="note" :class="notes[2].color"> -->
+<!--     <h3 class="title"> -->
+<!--         {{ notes[2].title }} -->
+<!--     </h3> -->
+<!--     <p class="content"> -->
+<!--         {{ notes[2].content }} -->
+<!--     </p> -->
+<!-- </div> -->
+
+
+        </div>
+    </div>
+
+    <script src="./04_js_vue_vFor.js"></script>
+</body>
+</html>
