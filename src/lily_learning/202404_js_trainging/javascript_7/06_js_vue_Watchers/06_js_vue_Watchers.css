@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.input_content {
+    width: 760px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.input_group {
+    position: relative;
+    margin-bottom: 20px; /* Adds space between input groups */
+    display: flex; /* 將容器設置為 Flexbox 以便對齊子元素 */
+}
+
+.label {
+    position: absolute;
+    left: 10px; 
+    top: -10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #277eb0;
+    background-color: #fff;
+}
+
+.input_area {
+    font-size: 20px;
+    line-height: 150%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.create_btn {
+    margin-left: auto; /* 將按鈕推到右側 */
+    padding: 8px 16px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 100px;
+    letter-spacing: 5px;
+}
+
+.create_btn:hover {
+    cursor: pointer;
+}
+
+.create_btn:active {
+    background-color: #e24d4d;
+    color: #f5cdcd;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap; /* 允許項目換行 */
+    align-content: flex-start; /* 對齊方式，這裡是從上到下 */
+}
+
+.delete_btn {
+    background: none; /* 去掉背景 */
+    border: none; /* 去掉邊框 */
+    color: red; /* X 的顏色 */
+    font-weight: bold; /* 字體加粗 */
+    cursor: pointer; /* 鼠標懸停時顯示為手型 */
+    position: absolute; /* 絕對定位 */
+    top: -6px; /* 距離上邊界的距離 */
+    right: -4px; /* 距離右邊界的距離 */
+}
+
+
+.note {
+    width: 240px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    position: relative; /* 新增這一行 */
+}
+
+.red {
+    background-color: #f7d5d9;
+}
+
+.green {
+    background-color: #D0EDDA;
+}
+
+.blue {
+    background-color: #C9E4FD;
+}
