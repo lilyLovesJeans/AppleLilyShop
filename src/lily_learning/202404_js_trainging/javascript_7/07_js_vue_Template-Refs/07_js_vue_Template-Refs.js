@@ -56,9 +56,8 @@ const app = createApp({
         if (savedNotes) {
             this.notes = JSON.parse(savedNotes); // 如果有筆記資料，則加載它們
         }
-
-        // 使用 jQuery 和 autosize 插件來自動調整 textarea 大小
-        autosize($('textarea')); // 使用 jQuery 選擇 textarea 元素並初始化 autosize
+        // 使用 ref 引用 textarea 并应用 autosize
+        autosize(this.$refs.autoResizeTextArea);
     }
 });
 
