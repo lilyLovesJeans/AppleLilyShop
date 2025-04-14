@@ -1,85 +1,43 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div id="app">
+    <nav>
+      <router-link to="/stopwatch">碼表應用程式</router-link>
+      <router-link to="/Notes">筆記應用程式</router-link>
+      <router-link to="/splitbill">分帳應用程式</router-link>
+      <router-link to="/calendar">行事曆應用程式</router-link>
+      <router-link to="/weather">天氣查詢應用程式</router-link>
+      <router-link to="/countryinfo">國家資訊與地圖應用程式</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
 
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  html, body {
+   height: 100%; /* 確保 html 和 body 佔滿瀏覽器視窗 */
+   margin: 0; /* 移除預設外邊距 */
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
   nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+    background-color: #f8f9fa; /* 淺灰色背景 */
+    padding: 10px; /* 上下內邊距 */
+    border-radius: 8px; /* 邊角圓角 */
+    margin: 10px 0; /* 外邊距 */
+    display: flex;
+    justify-content: space-around; /* 將連結平均分布 */
   }
-}
+
+  nav a {
+    text-decoration: none; /* 去除超鏈接的下劃線 */
+    color: #333; /* 設定文字顏色 */
+    font-weight: bold; /* 字體加粗 */
+  }
+
+  nav a:hover {
+    color: #007bff; /* 當滑鼠懸停時顏色變為藍色 */
+  }
 </style>
