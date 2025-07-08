@@ -9,6 +9,7 @@
       <router-link to="/Notes">筆記應用程式</router-link>
       <router-link to="/splitbill">分帳應用程式</router-link>
       <router-link to="/calendar">行事曆應用程式</router-link>
+      <router-link to="/weightTrackerApp">體重追蹤器</router-link>
       <router-link to="/weather">天氣查詢應用程式</router-link>
       <router-link to="/countryinfo">國家資訊與地圖應用程式</router-link>
     </nav>
