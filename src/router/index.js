@@ -7,6 +7,8 @@ import WeightTrackerApp from '../lily_learning/202404_js_trainging/javascript_8/
 import WeatherQuery from '../lily_learning/202404_js_trainging/javascript_8/components/WeatherQuery.vue';
 import CountryInfo from '../lily_learning/202404_js_trainging/javascript_8/components/CountryInfo.vue';
 
+
+
 const routes = [
   { 
     path: '/',
@@ -49,6 +51,7 @@ const routes = [
     component: CountryInfo 
   
   },
+  
 ];
 
 const router = createRouter({

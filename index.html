@@ -19,6 +19,13 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- ✅ Leaflet 地圖樣式（一定要放在 <head>，否則地圖會顯示異常或空白） -->
+      <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+ 
   </head>
   <body>
     <div id="app"></div>
@@ -37,6 +44,11 @@
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- ✅ Leaflet JavaScript 功能（建議放在 <body> 最下方，讓 HTML 載入完再執行） -->
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 
     <!-- Vue app -->
     <script type="module" src="/src/main.js"></script>
